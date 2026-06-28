@@ -1,0 +1,808 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <testsuites failures="10" name="" tests="298" skipped="209" errors="0">
+    <testcase classname="com.canonical.certification::acpi/oem_osi" name="com.canonical.certification::acpi/oem_osi" time="2.9060139656066895"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-audio/alsa-loopback-automated" name="com.canonical.certification::after-suspend-audio/alsa-loopback-automated" time="50.024030923843384"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-audio/detect-capture-devices" name="com.canonical.certification::after-suspend-audio/detect-capture-devices" time="46.6682014465332"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-audio/detect-playback-devices" name="com.canonical.certification::after-suspend-audio/detect-playback-devices" time="43.37224507331848"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-bluetooth/bluetooth_obex_send" name="com.canonical.certification::after-suspend-bluetooth/bluetooth_obex_send" time="52.058353424072266"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-bluetooth4/beacon_eddystone_url_hci0" name="com.canonical.certification::after-suspend-bluetooth4/beacon_eddystone_url_hci0" time="51.011220932006836"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-eeprom/read-write" name="com.canonical.certification::after-suspend-eeprom/read-write" time="53.151511907577515"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-ethernet/detect" name="com.canonical.certification::after-suspend-ethernet/detect" time="54.29177212715149"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-ethernet/ping-with-any-cable-interface" name="com.canonical.certification::after-suspend-ethernet/ping-with-any-cable-interface" time="56.633370876312256"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-ethernet/ping_eth0" name="com.canonical.certification::after-suspend-ethernet/ping_eth0" time="55.388309478759766"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-rtc/rtc_number" name="com.canonical.certification::after-suspend-rtc/rtc_number" time="57.724318742752075"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-usb/storage-detect" name="com.canonical.certification::after-suspend-usb/storage-detect" time="58.77731370925903"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_open_ac_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_open_ac_nm_wlan0" time="8.423726558685303"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_open_ac_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_open_ac_np_wlan0" time="32.26457357406616"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_open_ax_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_open_ax_nm_wlan0" time="7.507536172866821"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_open_ax_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_open_ax_np_wlan0" time="31.100356101989746"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_open_be_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_open_be_nm_wlan0" time="6.553519010543823"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_open_be_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_open_be_np_wlan0" time="29.970610857009888"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_open_bg_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_open_bg_nm_wlan0" time="9.322802543640137"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_open_bg_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_open_bg_np_wlan0" time="33.43039035797119"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_open_n_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_open_n_nm_wlan0" time="10.24448847770691"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_open_n_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_open_n_np_wlan0" time="34.628634452819824"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa3_ax_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa3_ax_nm_wlan0" time="23.091647624969482"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa3_ax_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa3_ax_np_wlan0" time="36.82839059829712"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa3_be_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa3_be_nm_wlan0" time="12.564616680145264"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa3_be_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa3_be_np_wlan0" time="38.813204526901245"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_ac_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_ac_nm_wlan0" time="26.52280068397522"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_ac_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_ac_np_wlan0" time="39.80682992935181"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_ax_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_ax_nm_wlan0" time="13.746806383132935"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_ax_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_ax_np_wlan0" time="35.7494580745697"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_be_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_be_nm_wlan0" time="11.318560600280762"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_be_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_be_np_wlan0" time="37.926602840423584"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_bg_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_bg_nm_wlan0" time="27.647473335266113"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_bg_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_bg_np_wlan0" time="40.97570013999939"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_n_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_n_nm_wlan0" time="28.766582012176514"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_n_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_n_np_wlan0" time="42.20241045951843"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_scanning_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_scanning_wlan0" time="5.6364052295684814"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wwan/detect" name="com.canonical.certification::after-suspend-wwan/detect" time="59.98950171470642"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::audio/alsa-loopback-automated" name="com.canonical.certification::audio/alsa-loopback-automated" time="25.485776662826538"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::audio/detect-capture-devices" name="com.canonical.certification::audio/detect-capture-devices" time="97.09398484230042"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::audio/detect-playback-devices" name="com.canonical.certification::audio/detect-playback-devices" time="0.614335298538208">
+    </testcase>
+    <testcase classname="com.canonical.certification::bluetooth/bluetooth_obex_send" name="com.canonical.certification::bluetooth/bluetooth_obex_send" time="201.73135924339294"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::bluetooth/bluez-controller-detect" name="com.canonical.certification::bluetooth/bluez-controller-detect" time="1.6714270114898682">
+    </testcase>
+    <testcase classname="com.canonical.certification::bluetooth/detect" name="com.canonical.certification::bluetooth/detect" time="4.739487171173096">
+    </testcase>
+    <testcase classname="com.canonical.certification::bluetooth/detect-output" name="com.canonical.certification::bluetooth/detect-output" time="0.6425023078918457">
+    </testcase>
+    <testcase classname="com.canonical.certification::bluetooth4/beacon_eddystone_url_hci0" name="com.canonical.certification::bluetooth4/beacon_eddystone_url_hci0" time="200.5674192905426"><failure type="">
+      
+====================================
+Attempt 1/3 (function &#39;beacon_scan&#39;)
+====================================
+# Checking the LE Extended advertising capability
+Received response from controller.
+Raw 8-byte LE feature mask: 3f 0 0 8 0 0 0 0
+# Extended advertising support: False
+# Checking the LE Extended advertising length
+HCI command failed with status 0x01.
+Failed to get the max_advertising_data_length from controller, return &#39;255&#39;
+# Max advertising data length: 255
+# Issue LE Set Scan Enable to &#39;False&#39; by hci command
+# Issue LE Set Scan Parameters by hci command
+# Issue LE Set Scan Enable to &#39;True&#39; by hci command
+Warning: HCI Command failed. Error code: 0xc, Payload: b&#39;\x04\x0e\x04\x01\x0c \x0c&#39;
+# Issue LE Set Scan Enable to &#39;False&#39; by hci command
+Attempt 1 failed:
+No EddyStone URL advertisement detected!
+
+Waiting 5.43 seconds before retrying...
+
+====================================
+Attempt 2/3 (function &#39;beacon_scan&#39;)
+====================================
+# Checking the LE Extended advertising capability
+Received response from controller.
+Raw 8-byte LE feature mask: 3f 0 0 8 0 0 0 0
+# Extended advertising support: False
+# Checking the LE Extended advertising length
+HCI command failed with status 0x01.
+Failed to get the max_advertising_data_length from controller, return &#39;255&#39;
+# Max advertising data length: 255
+# Issue LE Set Scan Enable to &#39;False&#39; by hci command
+# Issue LE Set Scan Parameters by hci command
+# Issue LE Set Scan Enable to &#39;True&#39; by hci command
+Warning: HCI Command failed. Error code: 0xc, Payload: b&#39;\x04\x0e\x04\x01\x0c \x0c&#39;
+# Issue LE Set Scan Enable to &#39;False&#39; by hci command
+Attempt 2 failed:
+No EddyStone URL advertisement detected!
+
+Waiting 4.01 seconds before retrying...
+
+====================================
+Attempt 3/3 (function &#39;beacon_scan&#39;)
+====================================
+# Checking the LE Extended advertising capability
+Received response from controller.
+Raw 8-byte LE feature mask: 3f 0 0 8 0 0 0 0
+# Extended advertising support: False
+# Checking the LE Extended advertising length
+HCI command failed with status 0x01.
+Failed to get the max_advertising_data_length from controller, return &#39;255&#39;
+# Max advertising data length: 255
+# Issue LE Set Scan Enable to &#39;False&#39; by hci command
+# Issue LE Set Scan Parameters by hci command
+# Issue LE Set Scan Enable to &#39;True&#39; by hci command
+Warning: HCI Command failed. Error code: 0xc, Payload: b&#39;\x04\x0e\x04\x01\x0c \x0c&#39;
+# Issue LE Set Scan Enable to &#39;False&#39; by hci command
+Attempt 3 failed:
+No EddyStone URL advertisement detected!
+
+All the attempts have failed!
+Traceback (most recent call last):
+  File &#34;/snap/checkbox24/current/bin/checkbox-support-eddystone_scanner&#34;, line 8, in &lt;module&gt;
+    sys.exit(main())
+             ^^^^^^
+  File &#34;/snap/checkbox24/current/lib/python3.12/site-packages/checkbox_support/helpers/timeout.py&#34;, line 180, in _f
+    return run_with_timeout(f, timeout_s, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;/snap/checkbox24/current/lib/python3.12/site-packages/checkbox_support/helpers/timeout.py&#34;, line 155, in run_with_timeout
+    raise exception_queue.get_nowait()
+RuntimeError: No EddyStone URL advertisement detected!
+
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::camera/detect" name="com.canonical.certification::camera/detect" time="96.21383547782898"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::camera/multiple-resolution-images_video19" name="com.canonical.certification::camera/multiple-resolution-images_video19" time="24.72123122215271"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::clevis-encrypt-tpm2/detect-ecc-capabilities" name="com.canonical.certification::clevis-encrypt-tpm2/detect-ecc-capabilities" time="17.364296436309814"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::clevis-encrypt-tpm2/detect-rsa-capabilities" name="com.canonical.certification::clevis-encrypt-tpm2/detect-rsa-capabilities" time="16.31994128227234"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::clevis-encrypt-tpm2/ecc" name="com.canonical.certification::clevis-encrypt-tpm2/ecc" time="4.732646703720093"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::clevis-encrypt-tpm2/precheck" name="com.canonical.certification::clevis-encrypt-tpm2/precheck" time="15.32181429862976"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::clevis-encrypt-tpm2/rsa" name="com.canonical.certification::clevis-encrypt-tpm2/rsa" time="3.79962420463562"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::cpu/arm64_vfp_support_aarch64" name="com.canonical.certification::cpu/arm64_vfp_support_aarch64" time="0.4355952739715576">
+    </testcase>
+    <testcase classname="com.canonical.certification::cpu/clocktest" name="com.canonical.certification::cpu/clocktest" time="303.8899736404419">
+    </testcase>
+    <testcase classname="com.canonical.certification::cpu/cstates" name="com.canonical.certification::cpu/cstates" time="1.2823419570922852"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::cpu/maxfreq_test" name="com.canonical.certification::cpu/maxfreq_test" time="3.329148769378662"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::cpu/offlining_test" name="com.canonical.certification::cpu/offlining_test" time="1.830493450164795"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::cpu/scaling_test" name="com.canonical.certification::cpu/scaling_test" time="1.658942699432373">
+    </testcase>
+    <testcase classname="com.canonical.certification::cpu/topology" name="com.canonical.certification::cpu/topology" time="14.440349578857422"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::disk/check-software-raid" name="com.canonical.certification::disk/check-software-raid" time="3.072965621948242"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::disk/detect" name="com.canonical.certification::disk/detect" time="2.9626858234405518">
+    </testcase>
+    <testcase classname="com.canonical.certification::disk/encryption/detect" name="com.canonical.certification::disk/encryption/detect" time="4.227534532546997"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/build-single_arm64" name="com.canonical.certification::docker/build-single_arm64" time="15.533903360366821">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/commit_arm64" name="com.canonical.certification::docker/commit_arm64" time="14.910571098327637">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/compose-and-basic_arm64" name="com.canonical.certification::docker/compose-and-basic_arm64" time="43.97650456428528">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/compose-restart_arm64" name="com.canonical.certification::docker/compose-restart_arm64" time="9.765408277511597">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/compose-single_arm64" name="com.canonical.certification::docker/compose-single_arm64" time="8.12690782546997">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/copy_arm64" name="com.canonical.certification::docker/copy_arm64" time="6.563793659210205">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/deploy-registry_arm64" name="com.canonical.certification::docker/deploy-registry_arm64" time="30.10889482498169">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/diff_arm64" name="com.canonical.certification::docker/diff_arm64" time="4.06545090675354">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/export-and-import_arm64" name="com.canonical.certification::docker/export-and-import_arm64" time="86.96785879135132">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/info" name="com.canonical.certification::docker/info" time="0.5726287364959717">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/inspect_arm64" name="com.canonical.certification::docker/inspect_arm64" time="2.5693113803863525">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/interative_arm64" name="com.canonical.certification::docker/interative_arm64" time="2.371471643447876">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/kill_arm64" name="com.canonical.certification::docker/kill_arm64" time="2.6785547733306885">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/restart-always_arm64" name="com.canonical.certification::docker/restart-always_arm64" time="14.294559717178345">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/restart-on-failure_arm64" name="com.canonical.certification::docker/restart-on-failure_arm64" time="16.801425218582153">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/run_arm64" name="com.canonical.certification::docker/run_arm64" time="124.52341794967651">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/save-and-load_arm64" name="com.canonical.certification::docker/save-and-load_arm64" time="18.433892250061035">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/start-stop_arm64" name="com.canonical.certification::docker/start-stop_arm64" time="4.865882873535156">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/update_arm64" name="com.canonical.certification::docker/update_arm64" time="2.937676429748535">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/version" name="com.canonical.certification::docker/version" time="0.5131185054779053">
+    </testcase>
+    <testcase classname="com.canonical.certification::eclite/module-detect" name="com.canonical.certification::eclite/module-detect" time="6.185699939727783"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::eclite/temperature-reading-from-thermal-acpitz" name="com.canonical.certification::eclite/temperature-reading-from-thermal-acpitz" time="34.10584330558777"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::edac/detect" name="com.canonical.certification::edac/detect" time="10.623815059661865"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::eeprom/read-write" name="com.canonical.certification::eeprom/read-write" time="203.0072250366211"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::ethernet/detect" name="com.canonical.certification::ethernet/detect" time="4.387288331985474">
+    </testcase>
+    <testcase classname="com.canonical.certification::ethernet/ping-with-any-cable-interface" name="com.canonical.certification::ethernet/ping-with-any-cable-interface" time="1.711172103881836"><failure type="">
+      Looking for all cable interfaces...
+FAIL: Couldn&#39;t find any suitable cable interface.
+
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::ethernet/ping_eth0" name="com.canonical.certification::ethernet/ping_eth0" time="1.6057329177856445"><failure type="">
+      ERROR:root:Could not find def gateway info in /proc
+Failed to find a host to ping on interface eth0
+FAIL: Unable to ping any host with the above interfaces
+
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::firmware/fwts_desktop_diagnosis" name="com.canonical.certification::firmware/fwts_desktop_diagnosis" time="6.217870712280273">
+    </testcase>
+    <testcase classname="com.canonical.certification::firmware/fwts_uefirtvariable" name="com.canonical.certification::firmware/fwts_uefirtvariable" time="1.6159496307373047">
+    </testcase>
+    <testcase classname="com.canonical.certification::fscrypt/check-kernel-config" name="com.canonical.certification::fscrypt/check-kernel-config" time="7.332781076431274">
+    </testcase>
+    <testcase classname="com.canonical.certification::fscrypt/check-support" name="com.canonical.certification::fscrypt/check-support" time="7.680567741394043">
+    </testcase>
+    <testcase classname="com.canonical.certification::i2c/i2c-bus-detect" name="com.canonical.certification::i2c/i2c-bus-detect" time="4.228177785873413"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::i2c/i2c-device-detect" name="com.canonical.certification::i2c/i2c-device-detect" time="32.09466338157654"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::info/kernel-config-iommu-flag" name="com.canonical.certification::info/kernel-config-iommu-flag" time="10.786924362182617"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::info/kernel_config" name="com.canonical.certification::info/kernel_config" time="2.5675432682037354">
+    </testcase>
+    <testcase classname="com.canonical.certification::info/systemd-analyze" name="com.canonical.certification::info/systemd-analyze" time="0.4724862575531006">
+    </testcase>
+    <testcase classname="com.canonical.certification::info/systemd-analyze-critical-chain" name="com.canonical.certification::info/systemd-analyze-critical-chain" time="9.833496332168579">
+    </testcase>
+    <testcase classname="com.canonical.certification::install/apt-get-gets-updates" name="com.canonical.certification::install/apt-get-gets-updates" time="130.95099544525146">
+    </testcase>
+    <testcase classname="com.canonical.certification::ipv6_detect" name="com.canonical.certification::ipv6_detect" time="0.46829724311828613">
+    </testcase>
+    <testcase classname="com.canonical.certification::ipv6_link_local_address_any_if" name="com.canonical.certification::ipv6_link_local_address_any_if" time="3.387600898742676"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::ipv6_link_local_address_eth0" name="com.canonical.certification::ipv6_link_local_address_eth0" time="0.5038166046142578"><failure type="">
+      ip -6 -o addr show dev eth0 scope link
+
+
+FAIL: No IPv6 address reported for the interface eth0
+
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::ishtp/device-detect" name="com.canonical.certification::ishtp/device-detect" time="33.076088190078735"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::ishtp/module-detect" name="com.canonical.certification::ishtp/module-detect" time="5.213088750839233"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::mei/check-device" name="com.canonical.certification::mei/check-device" time="7.133012294769287"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::mei/check-module" name="com.canonical.certification::mei/check-module" time="8.190739870071411"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::mei/get-firmware-version" name="com.canonical.certification::mei/get-firmware-version" time="34.9863076210022"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::memory/info" name="com.canonical.certification::memory/info" time="5.213315725326538">
+    </testcase>
+    <testcase classname="com.canonical.certification::miscellanea/check_prerelease" name="com.canonical.certification::miscellanea/check_prerelease" time="3.108295440673828">
+    </testcase>
+    <testcase classname="com.canonical.certification::miscellanea/debsums" name="com.canonical.certification::miscellanea/debsums" time="94.98250198364258">
+    </testcase>
+    <testcase classname="com.canonical.certification::miscellanea/efi_boot_mode" name="com.canonical.certification::miscellanea/efi_boot_mode" time="2.4531047344207764"><failure type="">
+      ERROR: FAIL: System did not boot in EFI mode
+
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::miscellanea/grub_file_check" name="com.canonical.certification::miscellanea/grub_file_check" time="5.506837844848633"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::miscellanea/oops" name="com.canonical.certification::miscellanea/oops" time="1.6221544742584229">
+    </testcase>
+    <testcase classname="com.canonical.certification::miscellanea/secure_boot_mode" name="com.canonical.certification::miscellanea/secure_boot_mode" time="30.20015025138855"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::miscellanea/submission-resources" name="com.canonical.certification::miscellanea/submission-resources" time="19.054561376571655"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::miscellanea/ubuntu-desktop-minimal-recommends" name="com.canonical.certification::miscellanea/ubuntu-desktop-minimal-recommends" time="4.681352376937866"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::miscellanea/ubuntu-desktop-recommends" name="com.canonical.certification::miscellanea/ubuntu-desktop-recommends" time="3.8127801418304443"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::networking/predictable_names" name="com.canonical.certification::networking/predictable_names" time="0.47812795639038086"><failure type="">
+      ** Error: Network interface eth0 is not a predictable name
+
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::power-management/cold-reboot" name="com.canonical.certification::power-management/cold-reboot" time="1.4840199947357178"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::power-management/post-cold-reboot" name="com.canonical.certification::power-management/post-cold-reboot" time="2.9631917476654053">
+    </testcase>
+    <testcase classname="com.canonical.certification::power-management/post-warm-reboot" name="com.canonical.certification::power-management/post-warm-reboot" time="0.6419916152954102">
+    </testcase>
+    <testcase classname="com.canonical.certification::power-management/warm-reboot" name="com.canonical.certification::power-management/warm-reboot" time="129.85448360443115">
+    </testcase>
+    <testcase classname="com.canonical.certification::qep/qep-device-driver-for-4b81" name="com.canonical.certification::qep/qep-device-driver-for-4b81" time="2.133697748184204"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::qep/qep-device-driver-for-4b82" name="com.canonical.certification::qep/qep-device-driver-for-4b82" time="3.0486457347869873"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::qep/qep-device-driver-for-4b83" name="com.canonical.certification::qep/qep-device-driver-for-4b83" time="3.995776414871216"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::qep/qep-device-driver-for-4bc3" name="com.canonical.certification::qep/qep-device-driver-for-4bc3" time="1.274454116821289"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::qep/qep-device-node-for-4b81" name="com.canonical.certification::qep/qep-device-node-for-4b81" time="5.87106728553772"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::qep/qep-device-node-for-4b82" name="com.canonical.certification::qep/qep-device-node-for-4b82" time="6.83729362487793"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::qep/qep-device-node-for-4b83" name="com.canonical.certification::qep/qep-device-node-for-4b83" time="7.742306232452393"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::qep/qep-device-node-for-4bc3" name="com.canonical.certification::qep/qep-device-node-for-4bc3" time="4.926911354064941"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::rtc/rtc_number" name="com.canonical.certification::rtc/rtc_number" time="0.5050086975097656">
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-refresh-snapd-snapd-to-base-rev" name="com.canonical.certification::snapd/snap-refresh-snapd-snapd-to-base-rev" time="9.230223894119263"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-refresh-snapd-snapd-to-stable-rev" name="com.canonical.certification::snapd/snap-refresh-snapd-snapd-to-stable-rev" time="12.278254747390747"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-revert-snapd-snapd-from-base-rev" name="com.canonical.certification::snapd/snap-revert-snapd-snapd-from-base-rev" time="11.285820722579956"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-revert-snapd-snapd-from-stable-rev" name="com.canonical.certification::snapd/snap-revert-snapd-snapd-from-stable-rev" time="14.288306474685669"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-verify-after-refresh-snapd-snapd-to-base-rev" name="com.canonical.certification::snapd/snap-verify-after-refresh-snapd-snapd-to-base-rev" time="10.21691107749939"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-verify-after-refresh-snapd-snapd-to-stable-rev" name="com.canonical.certification::snapd/snap-verify-after-refresh-snapd-snapd-to-stable-rev" time="13.223442554473877"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-verify-after-revert-snapd-snapd-from-base-rev" name="com.canonical.certification::snapd/snap-verify-after-revert-snapd-snapd-from-base-rev" time="1.3084862232208252"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-verify-after-revert-snapd-snapd-from-stable-rev" name="com.canonical.certification::snapd/snap-verify-after-revert-snapd-snapd-from-stable-rev" time="2.882662773132324"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::snappy/snap-install" name="com.canonical.certification::snappy/snap-install" time="21.621049165725708">
+    </testcase>
+    <testcase classname="com.canonical.certification::snappy/snap-list" name="com.canonical.certification::snappy/snap-list" time="2.409656286239624">
+    </testcase>
+    <testcase classname="com.canonical.certification::snappy/snap-refresh-automated" name="com.canonical.certification::snappy/snap-refresh-automated" time="34.53417086601257">
+    </testcase>
+    <testcase classname="com.canonical.certification::snappy/snap-remove" name="com.canonical.certification::snappy/snap-remove" time="8.566007137298584">
+    </testcase>
+    <testcase classname="com.canonical.certification::snappy/snap-reupdate-automated" name="com.canonical.certification::snappy/snap-reupdate-automated" time="66.8327705860138">
+    </testcase>
+    <testcase classname="com.canonical.certification::snappy/snap-revert-automated" name="com.canonical.certification::snappy/snap-revert-automated" time="66.70500421524048">
+    </testcase>
+    <testcase classname="com.canonical.certification::snappy/snap-search" name="com.canonical.certification::snappy/snap-search" time="2.514582395553589">
+    </testcase>
+    <testcase classname="com.canonical.certification::snappy/test-snaps-confinement" name="com.canonical.certification::snappy/test-snaps-confinement" time="2.530040740966797">
+    </testcase>
+    <testcase classname="com.canonical.certification::snappy/test-store-install-beta" name="com.canonical.certification::snappy/test-store-install-beta" time="21.147732496261597">
+    </testcase>
+    <testcase classname="com.canonical.certification::snappy/test-store-install-edge" name="com.canonical.certification::snappy/test-store-install-edge" time="22.276670455932617">
+    </testcase>
+    <testcase classname="com.canonical.certification::snappy/test-system-confinement" name="com.canonical.certification::snappy/test-system-confinement" time="2.1798343658447266">
+    </testcase>
+    <testcase classname="com.canonical.certification::socketcan/modprobe_vcan" name="com.canonical.certification::socketcan/modprobe_vcan" time="0.8004896640777588">
+    </testcase>
+    <testcase classname="com.canonical.certification::socketcan/send_packet_local_eff_virtual" name="com.canonical.certification::socketcan/send_packet_local_eff_virtual" time="2.2608132362365723">
+    </testcase>
+    <testcase classname="com.canonical.certification::socketcan/send_packet_local_fd_virtual" name="com.canonical.certification::socketcan/send_packet_local_fd_virtual" time="1.6571433544158936"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::socketcan/send_packet_local_sff_virtual" name="com.canonical.certification::socketcan/send_packet_local_sff_virtual" time="2.4656710624694824">
+    </testcase>
+    <testcase classname="com.canonical.certification::suspend/suspend_advanced_auto" name="com.canonical.certification::suspend/suspend_advanced_auto" time="102.73438239097595"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::usb-dwc3/driver-detect" name="com.canonical.certification::usb-dwc3/driver-detect" time="9.933462619781494"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::usb-dwc3/module-detect" name="com.canonical.certification::usb-dwc3/module-detect" time="10.79880142211914"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::usb/storage-detect" name="com.canonical.certification::usb/storage-detect" time="2.88425350189209"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::watchdog/detect" name="com.canonical.certification::watchdog/detect" time="4.250412702560425">
+    </testcase>
+    <testcase classname="com.canonical.certification::watchdog/post-trigger-system-reset-auto" name="com.canonical.certification::watchdog/post-trigger-system-reset-auto" time="0.4745137691497803">
+    </testcase>
+    <testcase classname="com.canonical.certification::watchdog/systemd-config" name="com.canonical.certification::watchdog/systemd-config" time="3.3974804878234863"><failure type="">
+      systemd watchdog should be enabled but reset timeout (RuntimeWatchdogUSec) is set to: 0
+In order for the watchdog service to work, the RuntimeWatchdogUSec configuration option must be set before running this test.
+found unexpected active watchdog.service unit
+
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::watchdog/trigger-system-reset-auto" name="com.canonical.certification::watchdog/trigger-system-reset-auto" time="61.251782178878784"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/detect" name="com.canonical.certification::wireless/detect" time="4.257167816162109">
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/nmcli_wifi_ap_a_wlan0" name="com.canonical.certification::wireless/nmcli_wifi_ap_a_wlan0" time="9.539881229400635"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/nmcli_wifi_ap_bg_wlan0" name="com.canonical.certification::wireless/nmcli_wifi_ap_bg_wlan0" time="1.5590732097625732"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wifi_ap_open_b_no_sta_wlan0_auto" name="com.canonical.certification::wireless/wifi_ap_open_b_no_sta_wlan0_auto" time="3.4681172370910645"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wifi_ap_open_g_no_sta_wlan0_auto" name="com.canonical.certification::wireless/wifi_ap_open_g_no_sta_wlan0_auto" time="12.080720901489258"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wifi_ap_setup_wizard_wlan0_auto" name="com.canonical.certification::wireless/wifi_ap_setup_wizard_wlan0_auto" time="36.37999176979065"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wifi_ap_wpa_b_no_sta_wlan0_auto" name="com.canonical.certification::wireless/wifi_ap_wpa_b_no_sta_wlan0_auto" time="1.6305019855499268"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wifi_ap_wpa_b_with_sta_wlan0_auto" name="com.canonical.certification::wireless/wifi_ap_wpa_b_with_sta_wlan0_auto" time="4.687245607376099"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wifi_ap_wpa_g_no_sta_wlan0_auto" name="com.canonical.certification::wireless/wifi_ap_wpa_g_no_sta_wlan0_auto" time="2.1838018894195557"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wifi_ap_wpa_g_with_sta_wlan0_auto" name="com.canonical.certification::wireless/wifi_ap_wpa_g_with_sta_wlan0_auto" time="211.2311532497406"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_open_ac_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_open_ac_nm_wlan0" time="21.310104846954346"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_open_ac_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_open_ac_np_wlan0" time="33.67309284210205"><failure type="">
+      Interface wlan0 using module brcmfmac
+  Parameters:
+    alternative_fw_path: 
+    debug: 0
+    roamoff: 0
+
+Checking kernel ring buffer for brcmfmac messages:
+kern  :debug : [Sat Jun 27 04:47:03 2026] brcmfmac: F1 signature read @0x18000000=0x15264345
+kern  :info  : [Sat Jun 27 04:47:03 2026] brcmfmac: brcmf_fw_alloc_request: using brcm/brcmfmac43455-sdio for chip BCM4345/6
+kern  :info  : [Sat Jun 27 04:47:03 2026] usbcore: registered new interface driver brcmfmac
+kern  :info  : [Sat Jun 27 04:47:03 2026] brcmfmac: brcmf_c_process_txcap_blob: no txcap_blob available (err=-2)
+kern  :info  : [Sat Jun 27 04:47:03 2026] brcmfmac: brcmf_c_preinit_dcmds: Firmware: BCM4345/6 wl0: Apr 15 2021 03:03:20 version 7.45.234 (4ca95bb CY) FWID 01-996384e2
+kern  :info  : [Sat Jun 27 04:47:04 2026] brcmfmac: brcmf_cfg80211_set_power_mgmt: power save enabled
+kern  :info  : [Sat Jun 27 04:51:13 2026] brcmfmac: brcmf_cfg80211_set_power_mgmt: power save enabled
+
+
+## Backup any existing netplan configuration files
+Clear backup location
+Backing up from /etc/netplan
+  /etc/netplan/50-cloud-init.yaml
+
+## Delete any existing netplan configuration files
+  /etc/netplan/50-cloud-init.yaml
+
+## Generate a test netplan configuration
+## Delete the test file
+Test config /etc/netplan/99-CREATED-BY-CHECKBOX.yaml not found, ignoring...
+
+## Restore configuration files
+Restoring:
+  /etc/netplan/50-cloud-init.yaml
++ netplan --debug apply
+
+A SSID is required for the test
+
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_open_ax_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_open_ax_nm_wlan0" time="20.321017742156982"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_open_ax_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_open_ax_np_wlan0" time="33.00417137145996"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_open_be_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_open_be_nm_wlan0" time="19.384153127670288"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_open_be_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_open_be_np_wlan0" time="31.06817626953125"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_open_bg_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_open_bg_nm_wlan0" time="22.215557098388672"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_open_bg_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_open_bg_np_wlan0" time="33.34846115112305"><failure type="">
+      Interface wlan0 using module brcmfmac
+  Parameters:
+    alternative_fw_path: 
+    debug: 0
+    roamoff: 0
+
+Checking kernel ring buffer for brcmfmac messages:
+kern  :debug : [Sat Jun 27 04:47:03 2026] brcmfmac: F1 signature read @0x18000000=0x15264345
+kern  :info  : [Sat Jun 27 04:47:03 2026] brcmfmac: brcmf_fw_alloc_request: using brcm/brcmfmac43455-sdio for chip BCM4345/6
+kern  :info  : [Sat Jun 27 04:47:03 2026] usbcore: registered new interface driver brcmfmac
+kern  :info  : [Sat Jun 27 04:47:03 2026] brcmfmac: brcmf_c_process_txcap_blob: no txcap_blob available (err=-2)
+kern  :info  : [Sat Jun 27 04:47:03 2026] brcmfmac: brcmf_c_preinit_dcmds: Firmware: BCM4345/6 wl0: Apr 15 2021 03:03:20 version 7.45.234 (4ca95bb CY) FWID 01-996384e2
+kern  :info  : [Sat Jun 27 04:47:04 2026] brcmfmac: brcmf_cfg80211_set_power_mgmt: power save enabled
+kern  :info  : [Sat Jun 27 04:51:13 2026] brcmfmac: brcmf_cfg80211_set_power_mgmt: power save enabled
+
+
+## Backup any existing netplan configuration files
+Clear backup location
+Backing up from /etc/netplan
+  /etc/netplan/50-cloud-init.yaml
+
+## Delete any existing netplan configuration files
+  /etc/netplan/50-cloud-init.yaml
+
+## Generate a test netplan configuration
+## Delete the test file
+Test config /etc/netplan/99-CREATED-BY-CHECKBOX.yaml not found, ignoring...
+
+## Restore configuration files
+Restoring:
+  /etc/netplan/50-cloud-init.yaml
++ netplan --debug apply
+
+A SSID is required for the test
+
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_open_n_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_open_n_nm_wlan0" time="23.295884370803833"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_open_n_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_open_n_np_wlan0" time="20.213616847991943"><failure type="">
+      Interface wlan0 using module brcmfmac
+  Parameters:
+    alternative_fw_path: 
+    debug: 0
+    roamoff: 0
+
+Checking kernel ring buffer for brcmfmac messages:
+kern  :debug : [Sat Jun 27 04:47:03 2026] brcmfmac: F1 signature read @0x18000000=0x15264345
+kern  :info  : [Sat Jun 27 04:47:03 2026] brcmfmac: brcmf_fw_alloc_request: using brcm/brcmfmac43455-sdio for chip BCM4345/6
+kern  :info  : [Sat Jun 27 04:47:03 2026] usbcore: registered new interface driver brcmfmac
+kern  :info  : [Sat Jun 27 04:47:03 2026] brcmfmac: brcmf_c_process_txcap_blob: no txcap_blob available (err=-2)
+kern  :info  : [Sat Jun 27 04:47:03 2026] brcmfmac: brcmf_c_preinit_dcmds: Firmware: BCM4345/6 wl0: Apr 15 2021 03:03:20 version 7.45.234 (4ca95bb CY) FWID 01-996384e2
+kern  :info  : [Sat Jun 27 04:47:04 2026] brcmfmac: brcmf_cfg80211_set_power_mgmt: power save enabled
+kern  :info  : [Sat Jun 27 04:51:13 2026] brcmfmac: brcmf_cfg80211_set_power_mgmt: power save enabled
+
+
+## Backup any existing netplan configuration files
+Clear backup location
+Backing up from /etc/netplan
+  /etc/netplan/50-cloud-init.yaml
+
+## Delete any existing netplan configuration files
+  /etc/netplan/50-cloud-init.yaml
+
+## Generate a test netplan configuration
+## Delete the test file
+Test config /etc/netplan/99-CREATED-BY-CHECKBOX.yaml not found, ignoring...
+
+## Restore configuration files
+Restoring:
+  /etc/netplan/50-cloud-init.yaml
++ netplan --debug apply
+
+A SSID is required for the test
+
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa3_ax_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa3_ax_nm_wlan0" time="27.17470693588257"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa3_ax_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa3_ax_np_wlan0" time="22.439171314239502"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa3_be_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa3_be_nm_wlan0" time="25.16591501235962"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa3_be_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa3_be_np_wlan0" time="24.54800820350647"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa_ac_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa_ac_nm_wlan0" time="28.126104593276978"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa_ac_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa_ac_np_wlan0" time="49.72012948989868">
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa_ax_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa_ax_nm_wlan0" time="26.180527210235596"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa_ax_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa_ax_np_wlan0" time="21.329823970794678"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa_be_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa_be_nm_wlan0" time="24.18323040008545"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa_be_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa_be_np_wlan0" time="23.59265899658203"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa_bg_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa_bg_nm_wlan0" time="29.226600170135498"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa_bg_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa_bg_np_wlan0" time="49.86110496520996">
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa_n_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa_n_nm_wlan0" time="30.160706996917725"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa_n_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa_n_np_wlan0" time="50.20190668106079">
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_scanning_wlan0" name="com.canonical.certification::wireless/wireless_scanning_wlan0" time="18.388548374176025"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wwan/detect" name="com.canonical.certification::wwan/detect" time="4.069001913070679"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-cpu/cpufreq-governor-conservative-policy0" name="com.canonical.contrib::after-suspend-ce-oem-cpu/cpufreq-governor-conservative-policy0" time="69.71101975440979"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-cpu/cpufreq-governor-ondemand-policy0" name="com.canonical.contrib::after-suspend-ce-oem-cpu/cpufreq-governor-ondemand-policy0" time="68.42025756835938"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-cpu/cpufreq-governor-performance-policy0" name="com.canonical.contrib::after-suspend-ce-oem-cpu/cpufreq-governor-performance-policy0" time="63.70694398880005"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-cpu/cpufreq-governor-powersave-policy0" name="com.canonical.contrib::after-suspend-ce-oem-cpu/cpufreq-governor-powersave-policy0" time="64.93404936790466"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-cpu/cpufreq-governor-schedutil-policy0" name="com.canonical.contrib::after-suspend-ce-oem-cpu/cpufreq-governor-schedutil-policy0" time="67.23685789108276"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-cpu/cpufreq-governor-userspace-policy0" name="com.canonical.contrib::after-suspend-ce-oem-cpu/cpufreq-governor-userspace-policy0" time="66.12336802482605"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-cpu/cpufreq_driver_detect" name="com.canonical.contrib::after-suspend-ce-oem-cpu/cpufreq_driver_detect" time="62.397974729537964"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-crypto/af_alg_aead_gcm_aes_test" name="com.canonical.contrib::after-suspend-ce-oem-crypto/af_alg_aead_gcm_aes_test" time="78.77846503257751"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-crypto/af_alg_hash_crc64_test" name="com.canonical.contrib::after-suspend-ce-oem-crypto/af_alg_hash_crc64_test" time="76.3909592628479"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-crypto/af_alg_hash_sha256_test" name="com.canonical.contrib::after-suspend-ce-oem-crypto/af_alg_hash_sha256_test" time="77.53870582580566"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-crypto/af_alg_rng_stdrng_test" name="com.canonical.contrib::after-suspend-ce-oem-crypto/af_alg_rng_stdrng_test" time="81.10239267349243"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-crypto/af_alg_skcipher_cbc_aes_test" name="com.canonical.contrib::after-suspend-ce-oem-crypto/af_alg_skcipher_cbc_aes_test" time="79.91874146461487"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-crypto/caam/algo_check" name="com.canonical.contrib::after-suspend-ce-oem-crypto/caam/algo_check" time="73.1393883228302"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-crypto/caam/caam_hwrng_test" name="com.canonical.contrib::after-suspend-ce-oem-crypto/caam/caam_hwrng_test" time="72.00411319732666"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-crypto/check-caam-cbc(aes)-crypto-profile" name="com.canonical.contrib::after-suspend-ce-oem-crypto/check-caam-cbc(aes)-crypto-profile" time="21.92694640159607"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-crypto/check-caam-gcm(aes)-crypto-profile" name="com.canonical.contrib::after-suspend-ce-oem-crypto/check-caam-gcm(aes)-crypto-profile" time="22.866246700286865"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-crypto/check-caam-sha256-crypto-profile" name="com.canonical.contrib::after-suspend-ce-oem-crypto/check-caam-sha256-crypto-profile" time="21.031075716018677"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-crypto/check-caam-stdrng-crypto-profile" name="com.canonical.contrib::after-suspend-ce-oem-crypto/check-caam-stdrng-crypto-profile" time="23.868119955062866"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-crypto/check-mcrc-crc64-crypto-profile" name="com.canonical.contrib::after-suspend-ce-oem-crypto/check-mcrc-crc64-crypto-profile" time="24.986835956573486"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-crypto/check-sa2ul-authenc(hmac(sha256),cbc(aes))-crypto-profile" name="com.canonical.contrib::after-suspend-ce-oem-crypto/check-sa2ul-authenc(hmac(sha256),cbc(aes))-crypto-profile" time="28.139318227767944"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-crypto/check-sa2ul-cbc(aes)-crypto-profile" name="com.canonical.contrib::after-suspend-ce-oem-crypto/check-sa2ul-cbc(aes)-crypto-profile" time="27.037654399871826"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-crypto/check-sa2ul-sha256-crypto-profile" name="com.canonical.contrib::after-suspend-ce-oem-crypto/check-sa2ul-sha256-crypto-profile" time="26.048956394195557"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-crypto/cryptsetup_benchmark" name="com.canonical.contrib::after-suspend-ce-oem-crypto/cryptsetup_benchmark" time="75.2890374660492"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-crypto/hwrng-current" name="com.canonical.contrib::after-suspend-ce-oem-crypto/hwrng-current" time="74.33815503120422"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-ethernet/tcp-multi-connections" name="com.canonical.contrib::after-suspend-ce-oem-ethernet/tcp-multi-connections" time="83.37597608566284"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-optee/xtest-pkcs11-" name="com.canonical.contrib::after-suspend-ce-oem-optee/xtest-pkcs11-" time="82.26083278656006"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-otg/OTG-Ethernet-on-port-" name="com.canonical.contrib::after-suspend-ce-oem-otg/OTG-Ethernet-on-port-" time="17.942214727401733"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-otg/OTG-Mass-Storage-on-port-" name="com.canonical.contrib::after-suspend-ce-oem-otg/OTG-Mass-Storage-on-port-" time="19.92290210723877"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-otg/OTG-Serial-on-port-" name="com.canonical.contrib::after-suspend-ce-oem-otg/OTG-Serial-on-port-" time="18.899281978607178"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-regulator/check-voltage-regulators" name="com.canonical.contrib::after-suspend-ce-oem-regulator/check-voltage-regulators" time="88.0451123714447"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-rpmsg/reload-rp-firmware-test-MISSING_PARAM_1-MISSING_PARAM_1" name="com.canonical.contrib::after-suspend-ce-oem-rpmsg/reload-rp-firmware-test-MISSING_PARAM_1-MISSING_PARAM_1" time="29.2190899848938"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-spi/detect" name="com.canonical.contrib::after-suspend-ce-oem-spi/detect" time="84.41108798980713"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-spi/spi-loopback-/dev/spidev0.0" name="com.canonical.contrib::after-suspend-ce-oem-spi/spi-loopback-/dev/spidev0.0" time="85.52565836906433"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-spi/spi-loopback-/dev/spidev0.1" name="com.canonical.contrib::after-suspend-ce-oem-spi/spi-loopback-/dev/spidev0.1" time="86.6315221786499"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem-thermal/temperature_thermal_zone0_cpu-thermal" name="com.canonical.contrib::after-suspend-ce-oem-thermal/temperature_thermal_zone0_cpu-thermal" time="70.84452438354492"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem/barcode-scanner-test-automated" name="com.canonical.contrib::after-suspend-ce-oem/barcode-scanner-test-automated" time="89.19174551963806"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem/credit-card-reader-test-automated" name="com.canonical.contrib::after-suspend-ce-oem/credit-card-reader-test-automated" time="91.17614340782166"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::after-suspend-ce-oem/printer-test-automated" name="com.canonical.contrib::after-suspend-ce-oem/printer-test-automated" time="90.19312405586243"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-cpu/cpufreq-governor-conservative-policy0" name="com.canonical.contrib::ce-oem-cpu/cpufreq-governor-conservative-policy0" time="1.9773659706115723">
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-cpu/cpufreq-governor-ondemand-policy0" name="com.canonical.contrib::ce-oem-cpu/cpufreq-governor-ondemand-policy0" time="2.451063632965088">
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-cpu/cpufreq-governor-performance-policy0" name="com.canonical.contrib::ce-oem-cpu/cpufreq-governor-performance-policy0" time="1.5479564666748047">
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-cpu/cpufreq-governor-powersave-policy0" name="com.canonical.contrib::ce-oem-cpu/cpufreq-governor-powersave-policy0" time="1.5683202743530273">
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-cpu/cpufreq-governor-schedutil-policy0" name="com.canonical.contrib::ce-oem-cpu/cpufreq-governor-schedutil-policy0" time="2.4206643104553223">
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-cpu/cpufreq-governor-userspace-policy0" name="com.canonical.contrib::ce-oem-cpu/cpufreq-governor-userspace-policy0" time="1.6092844009399414">
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-cpu/cpufreq_driver_detect" name="com.canonical.contrib::ce-oem-cpu/cpufreq_driver_detect" time="1.5357844829559326">
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-crypto/af_alg_aead_gcm_aes_test" name="com.canonical.contrib::ce-oem-crypto/af_alg_aead_gcm_aes_test" time="7.530508279800415"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-crypto/af_alg_hash_crc64_test" name="com.canonical.contrib::ce-oem-crypto/af_alg_hash_crc64_test" time="6.488077640533447"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-crypto/af_alg_hash_sha256_test" name="com.canonical.contrib::ce-oem-crypto/af_alg_hash_sha256_test" time="1.5518066883087158">
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-crypto/af_alg_rng_stdrng_test" name="com.canonical.contrib::ce-oem-crypto/af_alg_rng_stdrng_test" time="1.4704573154449463">
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-crypto/af_alg_skcipher_cbc_aes_test" name="com.canonical.contrib::ce-oem-crypto/af_alg_skcipher_cbc_aes_test" time="1.5186197757720947">
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-crypto/caam/algo_check" name="com.canonical.contrib::ce-oem-crypto/caam/algo_check" time="5.472071409225464"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-crypto/caam/caam_hwrng_test" name="com.canonical.contrib::ce-oem-crypto/caam/caam_hwrng_test" time="4.442123889923096"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-crypto/check-caam-cbc(aes)-crypto-profile" name="com.canonical.contrib::ce-oem-crypto/check-caam-cbc(aes)-crypto-profile" time="107.24617838859558"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-crypto/check-caam-gcm(aes)-crypto-profile" name="com.canonical.contrib::ce-oem-crypto/check-caam-gcm(aes)-crypto-profile" time="108.09513473510742"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-crypto/check-caam-sha256-crypto-profile" name="com.canonical.contrib::ce-oem-crypto/check-caam-sha256-crypto-profile" time="106.30012106895447"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-crypto/check-caam-stdrng-crypto-profile" name="com.canonical.contrib::ce-oem-crypto/check-caam-stdrng-crypto-profile" time="109.0805242061615"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-crypto/check-mcrc-crc64-crypto-profile" name="com.canonical.contrib::ce-oem-crypto/check-mcrc-crc64-crypto-profile" time="110.02856779098511"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-crypto/check-sa2ul-authenc(hmac(sha256),cbc(aes))-crypto-profile" name="com.canonical.contrib::ce-oem-crypto/check-sa2ul-authenc(hmac(sha256),cbc(aes))-crypto-profile" time="112.76376128196716"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-crypto/check-sa2ul-cbc(aes)-crypto-profile" name="com.canonical.contrib::ce-oem-crypto/check-sa2ul-cbc(aes)-crypto-profile" time="111.84239459037781"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-crypto/check-sa2ul-sha256-crypto-profile" name="com.canonical.contrib::ce-oem-crypto/check-sa2ul-sha256-crypto-profile" time="110.90059995651245"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-crypto/cryptsetup_benchmark" name="com.canonical.contrib::ce-oem-crypto/cryptsetup_benchmark" time="38.14488410949707">
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-crypto/hwrng-current" name="com.canonical.contrib::ce-oem-crypto/hwrng-current" time="99.13702487945557"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-ethernet/tcp-multi-connections" name="com.canonical.contrib::ce-oem-ethernet/tcp-multi-connections" time="11.244640827178955"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-gpio/check-slots" name="com.canonical.contrib::ce-oem-gpio/check-slots" time="23.751957178115845"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-graphics/nvidia-drm-modeset-check" name="com.canonical.contrib::ce-oem-graphics/nvidia-drm-modeset-check" time="2.3923070430755615"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-mipi-camera/readiness" name="com.canonical.contrib::ce-oem-mipi-camera/readiness" time="1.537285566329956">
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-mtd/check-total-numbers" name="com.canonical.contrib::ce-oem-mtd/check-total-numbers" time="8.205543041229248"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-optee/check-firmware-version" name="com.canonical.contrib::ce-oem-optee/check-firmware-version" time="22.781647205352783"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-optee/device-node" name="com.canonical.contrib::ce-oem-optee/device-node" time="100.00461912155151"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-optee/xtest-pkcs11-" name="com.canonical.contrib::ce-oem-optee/xtest-pkcs11-" time="8.440970182418823"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-otg/OTG-Ethernet-on-port-" name="com.canonical.contrib::ce-oem-otg/OTG-Ethernet-on-port-" time="103.67383551597595"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-otg/OTG-Mass-Storage-on-port-" name="com.canonical.contrib::ce-oem-otg/OTG-Mass-Storage-on-port-" time="105.39988970756531"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-otg/OTG-Serial-on-port-" name="com.canonical.contrib::ce-oem-otg/OTG-Serial-on-port-" time="104.53331542015076"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-power-management/cold-reboot-by-pdu" name="com.canonical.contrib::ce-oem-power-management/cold-reboot-by-pdu" time="24.67072057723999"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-power-management/post-cold-reboot-by-pdu" name="com.canonical.contrib::ce-oem-power-management/post-cold-reboot-by-pdu" time="25.76193857192993"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-regulator/check-voltage-regulators" name="com.canonical.contrib::ce-oem-regulator/check-voltage-regulators" time="15.294257879257202"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-remoteproc/check-firmware" name="com.canonical.contrib::ce-oem-remoteproc/check-firmware" time="4.864067077636719"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-rpmsg/detect-channel" name="com.canonical.contrib::ce-oem-rpmsg/detect-channel" time="5.5781872272491455"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-rpmsg/detect-device" name="com.canonical.contrib::ce-oem-rpmsg/detect-device" time="100.91251540184021"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-rpmsg/detect-mailbox" name="com.canonical.contrib::ce-oem-rpmsg/detect-mailbox" time="1.3789031505584717"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-rpmsg/detect-virtio" name="com.canonical.contrib::ce-oem-rpmsg/detect-virtio" time="101.81125068664551"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-rpmsg/devicetree-verify" name="com.canonical.contrib::ce-oem-rpmsg/devicetree-verify" time="2.5987699031829834"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-rpmsg/pingpong" name="com.canonical.contrib::ce-oem-rpmsg/pingpong" time="10.0519118309021"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-rpmsg/reload-rp-firmware-test-MISSING_PARAM_1-MISSING_PARAM_1" name="com.canonical.contrib::ce-oem-rpmsg/reload-rp-firmware-test-MISSING_PARAM_1-MISSING_PARAM_1" time="113.64371085166931"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-rpmsg/serial-tty" name="com.canonical.contrib::ce-oem-rpmsg/serial-tty" time="16.941370725631714"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-spi/detect" name="com.canonical.contrib::ce-oem-spi/detect" time="12.239070177078247"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-spi/spi-loopback-/dev/spidev0.0" name="com.canonical.contrib::ce-oem-spi/spi-loopback-/dev/spidev0.0" time="13.45583701133728"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-spi/spi-loopback-/dev/spidev0.1" name="com.canonical.contrib::ce-oem-spi/spi-loopback-/dev/spidev0.1" time="14.363710403442383"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-thermal/temperature_thermal_zone0_cpu-thermal" name="com.canonical.contrib::ce-oem-thermal/temperature_thermal_zone0_cpu-thermal" time="7.174370050430298">
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-wireless/ap_open_a_ch36_none_wlan0_automated" name="com.canonical.contrib::ce-oem-wireless/ap_open_a_ch36_none_wlan0_automated" time="2.6207516193389893"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-wireless/ap_open_bg_ch5_none_wlan0_automated" name="com.canonical.contrib::ce-oem-wireless/ap_open_bg_ch5_none_wlan0_automated" time="10.396065950393677"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-wireless/ap_wpa_wpa-psk_a_ch36_ccmp_wlan0_automated" name="com.canonical.contrib::ce-oem-wireless/ap_wpa_wpa-psk_a_ch36_ccmp_wlan0_automated" time="8.639724731445312"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem-wireless/ap_wpa_wpa-psk_bg_ch5_ccmp_wlan0_automated" name="com.canonical.contrib::ce-oem-wireless/ap_wpa_wpa-psk_bg_ch5_ccmp_wlan0_automated" time="3.7711713314056396"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem/barcode-scanner-test-automated" name="com.canonical.contrib::ce-oem/barcode-scanner-test-automated" time="16.17747950553894"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem/credit-card-reader-test-automated" name="com.canonical.contrib::ce-oem/credit-card-reader-test-automated" time="18.080926179885864"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::ce-oem/printer-test-automated" name="com.canonical.contrib::ce-oem/printer-test-automated" time="17.141655683517456"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::mir/check-ubuntu-frame-launching-auto" name="com.canonical.contrib::mir/check-ubuntu-frame-launching-auto" time="95.21434235572815"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.contrib::mir/glmark2-es2-wayland-auto" name="com.canonical.contrib::mir/glmark2-es2-wayland-auto" time="23.77316164970398"><skipped />
+    </testcase>
+  </testsuites>

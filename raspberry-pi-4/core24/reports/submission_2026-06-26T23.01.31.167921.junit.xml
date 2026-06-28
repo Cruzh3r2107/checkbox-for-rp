@@ -1,0 +1,1164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+  <testsuites failures="14" name="" tests="206" skipped="127" errors="0">
+    <testcase classname="com.canonical.certification::acpi/oem_osi" name="com.canonical.certification::acpi/oem_osi" time="3.688640832901001"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-audio/alsa-loopback-automated" name="com.canonical.certification::after-suspend-audio/alsa-loopback-automated" time="21.613204956054688"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-audio/detect-capture-devices" name="com.canonical.certification::after-suspend-audio/detect-capture-devices" time="20.996230840682983"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-audio/detect-playback-devices" name="com.canonical.certification::after-suspend-audio/detect-playback-devices" time="20.361981868743896"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-bluetooth/bluetooth_obex_send" name="com.canonical.certification::after-suspend-bluetooth/bluetooth_obex_send" time="22.84261202812195"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-bluetooth4/beacon_eddystone_url_hci0" name="com.canonical.certification::after-suspend-bluetooth4/beacon_eddystone_url_hci0" time="22.2215518951416"><failure type="">
+      
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-eeprom/read-write" name="com.canonical.certification::after-suspend-eeprom/read-write" time="23.48655676841736"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-ethernet/detect" name="com.canonical.certification::after-suspend-ethernet/detect" time="24.165189027786255"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-ethernet/ping-with-any-cable-interface" name="com.canonical.certification::after-suspend-ethernet/ping-with-any-cable-interface" time="25.493563175201416"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-ethernet/ping_end0" name="com.canonical.certification::after-suspend-ethernet/ping_end0" time="24.797974109649658"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-rtc/rtc_number" name="com.canonical.certification::after-suspend-rtc/rtc_number" time="26.107796907424927"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-usb/storage-detect" name="com.canonical.certification::after-suspend-usb/storage-detect" time="26.739569664001465"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_open_ac_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_open_ac_nm_wlan0" time="5.619410753250122"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_open_ac_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_open_ac_np_wlan0" time="13.490974426269531"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_open_ax_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_open_ax_nm_wlan0" time="4.952860593795776"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_open_ax_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_open_ax_np_wlan0" time="12.82991075515747"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_open_be_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_open_be_nm_wlan0" time="4.190548896789551"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_open_be_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_open_be_np_wlan0" time="12.202306509017944"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_open_bg_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_open_bg_nm_wlan0" time="6.242360591888428"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_open_bg_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_open_bg_np_wlan0" time="14.057793855667114"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_open_n_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_open_n_nm_wlan0" time="6.867014646530151"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_open_n_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_open_n_np_wlan0" time="14.707845687866211"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa3_ax_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa3_ax_nm_wlan0" time="9.537882089614868"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa3_ax_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa3_ax_np_wlan0" time="16.21950888633728"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa3_be_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa3_be_nm_wlan0" time="8.206929445266724"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa3_be_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa3_be_np_wlan0" time="17.528831481933594"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_ac_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_ac_nm_wlan0" time="10.248394966125488"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_ac_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_ac_np_wlan0" time="18.40952754020691"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_ax_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_ax_nm_wlan0" time="8.920636892318726"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_ax_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_ax_np_wlan0" time="15.360481262207031"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_be_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_be_nm_wlan0" time="7.494424343109131"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_be_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_be_np_wlan0" time="16.87832736968994"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_bg_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_bg_nm_wlan0" time="10.959178924560547"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_bg_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_bg_np_wlan0" time="19.032248735427856"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_n_nm_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_n_nm_wlan0" time="11.581582069396973"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_n_np_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_connection_wpa_n_np_wlan0" time="19.678147554397583"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wireless/wireless_scanning_wlan0" name="com.canonical.certification::after-suspend-wireless/wireless_scanning_wlan0" time="3.5675854682922363"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::after-suspend-wwan/detect" name="com.canonical.certification::after-suspend-wwan/detect" time="27.361383199691772"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::audio/alsa-loopback-automated" name="com.canonical.certification::audio/alsa-loopback-automated" time="114.76789736747742"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::audio/detect-capture-devices" name="com.canonical.certification::audio/detect-capture-devices" time="50.58743667602539"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::audio/detect-playback-devices" name="com.canonical.certification::audio/detect-playback-devices" time="0.8927090167999268">
+    </testcase>
+    <testcase classname="com.canonical.certification::bluetooth/bluetooth_obex_send" name="com.canonical.certification::bluetooth/bluetooth_obex_send" time="116.02467823028564"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::bluetooth/bluez-controller-detect" name="com.canonical.certification::bluetooth/bluez-controller-detect" time="2.722900867462158"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::bluetooth/detect" name="com.canonical.certification::bluetooth/detect" time="4.476733922958374">
+    </testcase>
+    <testcase classname="com.canonical.certification::bluetooth/detect-output" name="com.canonical.certification::bluetooth/detect-output" time="2.4954569339752197"><failure type="">
+      
+BT hardware not available
+
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::bluetooth4/beacon_eddystone_url_hci0" name="com.canonical.certification::bluetooth4/beacon_eddystone_url_hci0" time="115.41214036941528"><failure type="">
+      
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::camera/detect" name="com.canonical.certification::camera/detect" time="3.0644664764404297"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::camera/multiple-resolution-images_video19" name="com.canonical.certification::camera/multiple-resolution-images_video19" time="119.31227564811707"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::clevis-encrypt-tpm2/detect-ecc-capabilities" name="com.canonical.certification::clevis-encrypt-tpm2/detect-ecc-capabilities" time="7.757709264755249"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::clevis-encrypt-tpm2/detect-rsa-capabilities" name="com.canonical.certification::clevis-encrypt-tpm2/detect-rsa-capabilities" time="7.022930145263672"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::clevis-encrypt-tpm2/ecc" name="com.canonical.certification::clevis-encrypt-tpm2/ecc" time="2.233018636703491"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::clevis-encrypt-tpm2/precheck" name="com.canonical.certification::clevis-encrypt-tpm2/precheck" time="6.306331396102905"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::clevis-encrypt-tpm2/rsa" name="com.canonical.certification::clevis-encrypt-tpm2/rsa" time="1.5370712280273438"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::cpu/arm64_vfp_support_aarch64" name="com.canonical.certification::cpu/arm64_vfp_support_aarch64" time="0.5066125392913818">
+    </testcase>
+    <testcase classname="com.canonical.certification::cpu/clocktest" name="com.canonical.certification::cpu/clocktest" time="302.79063177108765">
+    </testcase>
+    <testcase classname="com.canonical.certification::cpu/cstates" name="com.canonical.certification::cpu/cstates" time="1.0520248413085938"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::cpu/maxfreq_test" name="com.canonical.certification::cpu/maxfreq_test" time="3.733677387237549"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::cpu/offlining_test" name="com.canonical.certification::cpu/offlining_test" time="1.6845495700836182"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::cpu/scaling_test" name="com.canonical.certification::cpu/scaling_test" time="1.3997623920440674">
+    </testcase>
+    <testcase classname="com.canonical.certification::cpu/topology" name="com.canonical.certification::cpu/topology" time="2.323420286178589"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::disk/check-software-raid" name="com.canonical.certification::disk/check-software-raid" time="3.4520692825317383"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::disk/detect" name="com.canonical.certification::disk/detect" time="2.9536821842193604">
+    </testcase>
+    <testcase classname="com.canonical.certification::disk/encryption/detect" name="com.canonical.certification::disk/encryption/detect" time="10.414470911026001"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/build-single_arm64" name="com.canonical.certification::docker/build-single_arm64" time="5.6524577140808105">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/commit_arm64" name="com.canonical.certification::docker/commit_arm64" time="11.09023141860962">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/compose-and-basic_arm64" name="com.canonical.certification::docker/compose-and-basic_arm64" time="46.02808213233948">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/compose-restart_arm64" name="com.canonical.certification::docker/compose-restart_arm64" time="10.327603340148926">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/compose-single_arm64" name="com.canonical.certification::docker/compose-single_arm64" time="5.742241144180298">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/copy_arm64" name="com.canonical.certification::docker/copy_arm64" time="6.830138206481934">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/deploy-registry_arm64" name="com.canonical.certification::docker/deploy-registry_arm64" time="10.187619924545288">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/diff_arm64" name="com.canonical.certification::docker/diff_arm64" time="4.5493621826171875">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/export-and-import_arm64" name="com.canonical.certification::docker/export-and-import_arm64" time="48.75101685523987">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/info" name="com.canonical.certification::docker/info" time="7.131596803665161">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/inspect_arm64" name="com.canonical.certification::docker/inspect_arm64" time="2.604792356491089">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/interative_arm64" name="com.canonical.certification::docker/interative_arm64" time="2.280571222305298">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/kill_arm64" name="com.canonical.certification::docker/kill_arm64" time="2.9141643047332764">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/restart-always_arm64" name="com.canonical.certification::docker/restart-always_arm64" time="13.689577579498291">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/restart-on-failure_arm64" name="com.canonical.certification::docker/restart-on-failure_arm64" time="11.415650606155396">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/run_arm64" name="com.canonical.certification::docker/run_arm64" time="3.102018117904663">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/save-and-load_arm64" name="com.canonical.certification::docker/save-and-load_arm64" time="14.495372533798218">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/start-stop_arm64" name="com.canonical.certification::docker/start-stop_arm64" time="4.308852195739746">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/update_arm64" name="com.canonical.certification::docker/update_arm64" time="3.2976388931274414">
+    </testcase>
+    <testcase classname="com.canonical.certification::docker/version" name="com.canonical.certification::docker/version" time="0.8879551887512207">
+    </testcase>
+    <testcase classname="com.canonical.certification::eclite/module-detect" name="com.canonical.certification::eclite/module-detect" time="5.6682164669036865"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::eclite/temperature-reading-from-thermal-acpitz" name="com.canonical.certification::eclite/temperature-reading-from-thermal-acpitz" time="121.97690415382385"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::eeprom/read-write" name="com.canonical.certification::eeprom/read-write" time="116.74165678024292"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::ethernet/detect" name="com.canonical.certification::ethernet/detect" time="5.51995062828064">
+    </testcase>
+    <testcase classname="com.canonical.certification::ethernet/ping-with-any-cable-interface" name="com.canonical.certification::ethernet/ping-with-any-cable-interface" time="3.605954647064209">
+    </testcase>
+    <testcase classname="com.canonical.certification::ethernet/ping_end0" name="com.canonical.certification::ethernet/ping_end0" time="3.6273202896118164">
+    </testcase>
+    <testcase classname="com.canonical.certification::firmware/fwts_desktop_diagnosis" name="com.canonical.certification::firmware/fwts_desktop_diagnosis" time="2.5845746994018555">
+    </testcase>
+    <testcase classname="com.canonical.certification::firmware/fwts_dump" name="com.canonical.certification::firmware/fwts_dump" time="0.893557071685791">
+    </testcase>
+    <testcase classname="com.canonical.certification::i2c/i2c-bus-detect" name="com.canonical.certification::i2c/i2c-bus-detect" time="4.351288795471191"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::i2c/i2c-device-detect" name="com.canonical.certification::i2c/i2c-device-detect" time="120.53342771530151"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::image/model-grade" name="com.canonical.certification::image/model-grade" time="2.4447999000549316">
+    </testcase>
+    <testcase classname="com.canonical.certification::info/kernel-config-iommu-flag" name="com.canonical.certification::info/kernel-config-iommu-flag" time="9.792797327041626"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::info/kernel_config" name="com.canonical.certification::info/kernel_config" time="2.460477828979492">
+    </testcase>
+    <testcase classname="com.canonical.certification::info/systemd-analyze" name="com.canonical.certification::info/systemd-analyze" time="0.9041872024536133">
+    </testcase>
+    <testcase classname="com.canonical.certification::info/systemd-analyze-critical-chain" name="com.canonical.certification::info/systemd-analyze-critical-chain" time="9.197194337844849">
+    </testcase>
+    <testcase classname="com.canonical.certification::ipv6_detect" name="com.canonical.certification::ipv6_detect" time="2.0665431022644043">
+    </testcase>
+    <testcase classname="com.canonical.certification::ipv6_link_local_address_any_if" name="com.canonical.certification::ipv6_link_local_address_any_if" time="2.5728986263275146"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::ipv6_link_local_address_end0" name="com.canonical.certification::ipv6_link_local_address_end0" time="0.8912968635559082">
+    </testcase>
+    <testcase classname="com.canonical.certification::ishtp/device-detect" name="com.canonical.certification::ishtp/device-detect" time="121.2456407546997"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::ishtp/module-detect" name="com.canonical.certification::ishtp/module-detect" time="5.045356035232544"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::mei/check-device" name="com.canonical.certification::mei/check-device" time="6.277719020843506"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::mei/check-module" name="com.canonical.certification::mei/check-module" time="6.901857852935791"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::mei/get-firmware-version" name="com.canonical.certification::mei/get-firmware-version" time="122.64111375808716"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::memory/info" name="com.canonical.certification::memory/info" time="3.5095436573028564">
+    </testcase>
+    <testcase classname="com.canonical.certification::miscellanea/secure_boot_mode_pi" name="com.canonical.certification::miscellanea/secure_boot_mode_pi" time="3.04223895072937"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::miscellanea/submission-resources" name="com.canonical.certification::miscellanea/submission-resources" time="118.59207320213318"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::networking/predictable_names" name="com.canonical.certification::networking/predictable_names" time="1.4454748630523682"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::power-management/cold-reboot" name="com.canonical.certification::power-management/cold-reboot" time="1.8950304985046387"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::power-management/post-cold-reboot" name="com.canonical.certification::power-management/post-cold-reboot" time="0.9097747802734375">
+    </testcase>
+    <testcase classname="com.canonical.certification::power-management/post-warm-reboot" name="com.canonical.certification::power-management/post-warm-reboot" time="1.4140949249267578">
+    </testcase>
+    <testcase classname="com.canonical.certification::power-management/warm-reboot" name="com.canonical.certification::power-management/warm-reboot" time="101.45673131942749">
+    </testcase>
+    <testcase classname="com.canonical.certification::qep/qep-device-driver-for-4b81" name="com.canonical.certification::qep/qep-device-driver-for-4b81" time="2.1088802814483643"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::qep/qep-device-driver-for-4b82" name="com.canonical.certification::qep/qep-device-driver-for-4b82" time="2.656412363052368"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::qep/qep-device-driver-for-4b83" name="com.canonical.certification::qep/qep-device-driver-for-4b83" time="3.2680275440216064"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::qep/qep-device-driver-for-4bc3" name="com.canonical.certification::qep/qep-device-driver-for-4bc3" time="1.5061149597167969"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::qep/qep-device-node-for-4b81" name="com.canonical.certification::qep/qep-device-node-for-4b81" time="4.337840795516968"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::qep/qep-device-node-for-4b82" name="com.canonical.certification::qep/qep-device-node-for-4b82" time="4.880805253982544"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::qep/qep-device-node-for-4b83" name="com.canonical.certification::qep/qep-device-node-for-4b83" time="5.413769483566284"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::qep/qep-device-node-for-4bc3" name="com.canonical.certification::qep/qep-device-node-for-4bc3" time="3.805734634399414"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::rtc/rtc_number" name="com.canonical.certification::rtc/rtc_number" time="0.8928775787353516">
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-refresh-gadget-pi-to-base-rev" name="com.canonical.certification::snapd/snap-refresh-gadget-pi-to-base-rev" time="136.62722969055176">
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-refresh-gadget-pi-to-stable-rev" name="com.canonical.certification::snapd/snap-refresh-gadget-pi-to-stable-rev" time="7.519099473953247"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-refresh-kernel-pi-kernel-to-base-rev" name="com.canonical.certification::snapd/snap-refresh-kernel-pi-kernel-to-base-rev" time="125.18506264686584">
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-refresh-kernel-pi-kernel-to-stable-rev" name="com.canonical.certification::snapd/snap-refresh-kernel-pi-kernel-to-stable-rev" time="4.422850608825684"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-refresh-snapd-snapd-to-base-rev" name="com.canonical.certification::snapd/snap-refresh-snapd-snapd-to-base-rev" time="9.35487699508667"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-refresh-snapd-snapd-to-stable-rev" name="com.canonical.certification::snapd/snap-refresh-snapd-snapd-to-stable-rev" time="173.30365467071533">
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-revert-gadget-pi-from-base-rev" name="com.canonical.certification::snapd/snap-revert-gadget-pi-from-base-rev" time="119.34450387954712">
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-revert-gadget-pi-from-stable-rev" name="com.canonical.certification::snapd/snap-revert-gadget-pi-from-stable-rev" time="8.740523099899292"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-revert-kernel-pi-kernel-from-base-rev" name="com.canonical.certification::snapd/snap-revert-kernel-pi-kernel-from-base-rev" time="3.8042426109313965"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-revert-kernel-pi-kernel-from-stable-rev" name="com.canonical.certification::snapd/snap-revert-kernel-pi-kernel-from-stable-rev" time="5.690557479858398"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-revert-snapd-snapd-from-base-rev" name="com.canonical.certification::snapd/snap-revert-snapd-snapd-from-base-rev" time="10.611308813095093"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-revert-snapd-snapd-from-stable-rev" name="com.canonical.certification::snapd/snap-revert-snapd-snapd-from-stable-rev" time="156.37528228759766">
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-verify-after-refresh-gadget-pi-to-base-rev" name="com.canonical.certification::snapd/snap-verify-after-refresh-gadget-pi-to-base-rev" time="3.4602813720703125">
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-verify-after-refresh-gadget-pi-to-stable-rev" name="com.canonical.certification::snapd/snap-verify-after-refresh-gadget-pi-to-stable-rev" time="8.13109040260315"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-verify-after-refresh-kernel-pi-kernel-to-base-rev" name="com.canonical.certification::snapd/snap-verify-after-refresh-kernel-pi-kernel-to-base-rev" time="3.1720612049102783"><failure type="">
+      Beginning verify...
+1628 | Done | Ensure prerequisites for &#34;pi-kernel&#34; are available
+1629 | Undone | Prepare snap &#34;&#34; (852)
+1630 | Undone | Run pre-refresh hook of &#34;pi-kernel&#34; snap if present
+1631 | Undone | Stop snap &#34;pi-kernel&#34; services
+1632 | Undone | Remove aliases for snap &#34;pi-kernel&#34;
+1633 | Undone | Make current revision for snap &#34;pi-kernel&#34; unavailable
+1634 | Undone | Prepare kernel driver tree for &#34;pi-kernel&#34; (852)
+1635 | Done | Update assets from kernel &#34;pi-kernel&#34; (852)
+	 2026-06-26T22:33:17Z INFO No gadget assets update needed
+1636 | Undone | Copy snap &#34;pi-kernel&#34; data
+1637 | Undone | Setup snap &#34;pi-kernel&#34; (852) security profiles
+1638 | Undone | Make snap &#34;pi-kernel&#34; (852) available to the system
+	 2026-06-26T22:33:26Z INFO Task set to wait until a system restart allows to continue
+1639 | Error | Automatically connect eligible plugs and slots of snap &#34;pi-kernel&#34;
+	 2026-06-26T22:33:40Z ERROR cannot finish pi-kernel installation, there was a rollback across reboot
+1640 | Hold | Discard kernel driver tree for &#34;pi-kernel&#34; (852)
+1641 | Hold | Set automatic aliases for snap &#34;pi-kernel&#34;
+1642 | Hold | Setup snap &#34;pi-kernel&#34; aliases
+1643 | Hold | Run post-refresh hook of &#34;pi-kernel&#34; snap if present
+1644 | Hold | Start snap &#34;pi-kernel&#34; (852) services
+1645 | Hold | Clean up &#34;pi-kernel&#34; (852) install
+1646 | Hold | Run configure hook of &#34;pi-kernel&#34; snap if present
+1647 | Hold | Run health check of &#34;pi-kernel&#34; snap
+1648 | Done | Monitoring snap &#34;pi-kernel&#34; to determine whether extra refresh steps are required
+	 2026-06-26T22:33:26Z INFO Task set to wait until a system restart allows to continue
+Error during snap pi-kernel refresh.
+
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-verify-after-refresh-kernel-pi-kernel-to-stable-rev" name="com.canonical.certification::snapd/snap-verify-after-refresh-kernel-pi-kernel-to-stable-rev" time="5.076301336288452"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-verify-after-refresh-snapd-snapd-to-base-rev" name="com.canonical.certification::snapd/snap-verify-after-refresh-snapd-snapd-to-base-rev" time="9.969459056854248"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-verify-after-refresh-snapd-snapd-to-stable-rev" name="com.canonical.certification::snapd/snap-verify-after-refresh-snapd-snapd-to-stable-rev" time="2.9801888465881348">
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-verify-after-revert-gadget-pi-from-base-rev" name="com.canonical.certification::snapd/snap-verify-after-revert-gadget-pi-from-base-rev" time="3.298705577850342">
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-verify-after-revert-gadget-pi-from-stable-rev" name="com.canonical.certification::snapd/snap-verify-after-revert-gadget-pi-from-stable-rev" time="4.253788709640503"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-verify-after-revert-kernel-pi-kernel-from-base-rev" name="com.canonical.certification::snapd/snap-verify-after-revert-kernel-pi-kernel-from-base-rev" time="5.526428937911987"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-verify-after-revert-kernel-pi-kernel-from-stable-rev" name="com.canonical.certification::snapd/snap-verify-after-revert-kernel-pi-kernel-from-stable-rev" time="6.218844652175903"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-verify-after-revert-snapd-snapd-from-base-rev" name="com.canonical.certification::snapd/snap-verify-after-revert-snapd-snapd-from-base-rev" time="4.881157398223877"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::snapd/snap-verify-after-revert-snapd-snapd-from-stable-rev" name="com.canonical.certification::snapd/snap-verify-after-revert-snapd-snapd-from-stable-rev" time="3.498591661453247">
+    </testcase>
+    <testcase classname="com.canonical.certification::snappy/snap-install" name="com.canonical.certification::snappy/snap-install" time="21.311417818069458">
+    </testcase>
+    <testcase classname="com.canonical.certification::snappy/snap-list" name="com.canonical.certification::snappy/snap-list" time="4.1022069454193115">
+    </testcase>
+    <testcase classname="com.canonical.certification::snappy/snap-refresh-automated" name="com.canonical.certification::snappy/snap-refresh-automated" time="52.632296085357666">
+    </testcase>
+    <testcase classname="com.canonical.certification::snappy/snap-remove" name="com.canonical.certification::snappy/snap-remove" time="3.5791096687316895"><failure type="">
+      Remove test-snapd-tools-core24...
+Traceback (most recent call last):
+  File &#34;/tmp/nest-ibp6xrle.fb703067bcdedffcc4c8ecc052bf03dea7cefa1749f2820998db2c5371872f0b/snap_tests.py&#34;, line 218, in &lt;module&gt;
+    sys.exit(Snap().main())
+             ^^^^^^^^^^^^^
+  File &#34;/tmp/nest-ibp6xrle.fb703067bcdedffcc4c8ecc052bf03dea7cefa1749f2820998db2c5371872f0b/snap_tests.py&#34;, line 214, in main
+    return sub_commands[args.subcommand]().invoked()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;/tmp/nest-ibp6xrle.fb703067bcdedffcc4c8ecc052bf03dea7cefa1749f2820998db2c5371872f0b/snap_tests.py&#34;, line 188, in invoked
+    s.remove(TEST_SNAP)
+  File &#34;/snap/checkbox/24471/checkbox-runtime/lib/python3.12/site-packages/checkbox_ng/support/snap_utils/snapd.py&#34;, line 177, in remove
+    r = self._post(path, json.dumps(data))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;/snap/checkbox/24471/checkbox-runtime/lib/python3.12/site-packages/checkbox_ng/support/snap_utils/snapd.py&#34;, line 105, in _post
+    return self._request(&#34;POST&#34;, path, data=data, decode=decode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;/snap/checkbox/24471/checkbox-runtime/lib/python3.12/site-packages/checkbox_ng/support/snap_utils/snapd.py&#34;, line 96, in _request
+    raise SnapdRequestError.from_response(body)
+checkbox_ng.support.snap_utils.snapd.SnapdRequestError: (&#39;snap &#34;test-snapd-tools-core24&#34; has &#34;refresh-snap&#34; change in progress&#39;, &#39;snap-change-conflict&#39;)
+
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::snappy/snap-reupdate-automated" name="com.canonical.certification::snappy/snap-reupdate-automated" time="2.4704601764678955"><failure type="">
+      Get edge channel revision from store...
+Traceback (most recent call last):
+  File &#34;/tmp/nest-kbmsg_np.9adc22d9754c3f03528a23236de53db2e688cde982de37d4f7d113450d7e7e3d/snap_tests.py&#34;, line 218, in &lt;module&gt;
+    sys.exit(Snap().main())
+             ^^^^^^^^^^^^^
+  File &#34;/tmp/nest-kbmsg_np.9adc22d9754c3f03528a23236de53db2e688cde982de37d4f7d113450d7e7e3d/snap_tests.py&#34;, line 214, in main
+    return sub_commands[args.subcommand]().invoked()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;/tmp/nest-kbmsg_np.9adc22d9754c3f03528a23236de53db2e688cde982de37d4f7d113450d7e7e3d/snap_tests.py&#34;, line 160, in invoked
+    s.remove(TEST_SNAP)
+  File &#34;/snap/checkbox/24471/checkbox-runtime/lib/python3.12/site-packages/checkbox_ng/support/snap_utils/snapd.py&#34;, line 177, in remove
+    r = self._post(path, json.dumps(data))
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;/snap/checkbox/24471/checkbox-runtime/lib/python3.12/site-packages/checkbox_ng/support/snap_utils/snapd.py&#34;, line 105, in _post
+    return self._request(&#34;POST&#34;, path, data=data, decode=decode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;/snap/checkbox/24471/checkbox-runtime/lib/python3.12/site-packages/checkbox_ng/support/snap_utils/snapd.py&#34;, line 96, in _request
+    raise SnapdRequestError.from_response(body)
+checkbox_ng.support.snap_utils.snapd.SnapdRequestError: (&#39;snap &#34;test-snapd-tools-core24&#34; has &#34;refresh-snap&#34; change in progress&#39;, &#39;snap-change-conflict&#39;)
+
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::snappy/snap-revert-automated" name="com.canonical.certification::snappy/snap-revert-automated" time="67.5524411201477"><failure type="">
+      Install stable revision
+Refresh to edge
+Traceback (most recent call last):
+  File &#34;/tmp/nest-cisn0ioi.c9dbc7d118d50c087c15700ae68918f26f7fece23eddd34b9550bc7c27785744/snap_tests.py&#34;, line 218, in &lt;module&gt;
+    sys.exit(Snap().main())
+             ^^^^^^^^^^^^^
+  File &#34;/tmp/nest-cisn0ioi.c9dbc7d118d50c087c15700ae68918f26f7fece23eddd34b9550bc7c27785744/snap_tests.py&#34;, line 214, in main
+    return sub_commands[args.subcommand]().invoked()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File &#34;/tmp/nest-cisn0ioi.c9dbc7d118d50c087c15700ae68918f26f7fece23eddd34b9550bc7c27785744/snap_tests.py&#34;, line 132, in invoked
+    s.refresh(TEST_SNAP, &#34;edge&#34;)
+  File &#34;/snap/checkbox/24471/checkbox-runtime/lib/python3.12/site-packages/checkbox_ng/support/snap_utils/snapd.py&#34;, line 199, in refresh
+    self._poll_change(r[&#34;change&#34;])
+  File &#34;/snap/checkbox/24471/checkbox-runtime/lib/python3.12/site-packages/checkbox_ng/support/snap_utils/snapd.py&#34;, line 118, in _poll_change
+    raise AsyncException(status, abort_result)
+checkbox_ng.support.snap_utils.snapd.AsyncException: (&#39;Doing&#39;, &#39;Abort&#39;)
+
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::snappy/snap-search" name="com.canonical.certification::snappy/snap-search" time="3.096466302871704">
+    </testcase>
+    <testcase classname="com.canonical.certification::snappy/test-snaps-confinement" name="com.canonical.certification::snappy/test-snaps-confinement" time="2.618610143661499">
+    </testcase>
+    <testcase classname="com.canonical.certification::snappy/test-store-install-beta" name="com.canonical.certification::snappy/test-store-install-beta" time="39.12926745414734">
+    </testcase>
+    <testcase classname="com.canonical.certification::snappy/test-store-install-edge" name="com.canonical.certification::snappy/test-store-install-edge" time="32.14270997047424">
+    </testcase>
+    <testcase classname="com.canonical.certification::snappy/test-system-confinement" name="com.canonical.certification::snappy/test-system-confinement" time="3.9960384368896484">
+    </testcase>
+    <testcase classname="com.canonical.certification::socketcan/modprobe_vcan" name="com.canonical.certification::socketcan/modprobe_vcan" time="0.8969242572784424">
+    </testcase>
+    <testcase classname="com.canonical.certification::socketcan/send_packet_local_eff_virtual" name="com.canonical.certification::socketcan/send_packet_local_eff_virtual" time="2.3459882736206055">
+    </testcase>
+    <testcase classname="com.canonical.certification::socketcan/send_packet_local_fd_virtual" name="com.canonical.certification::socketcan/send_packet_local_fd_virtual" time="2.944740056991577"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::socketcan/send_packet_local_sff_virtual" name="com.canonical.certification::socketcan/send_packet_local_sff_virtual" time="2.2883129119873047">
+    </testcase>
+    <testcase classname="com.canonical.certification::suspend/suspend_advanced_auto" name="com.canonical.certification::suspend/suspend_advanced_auto" time="5.722945690155029"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::usb-dwc3/driver-detect" name="com.canonical.certification::usb-dwc3/driver-detect" time="6.305503606796265"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::usb-dwc3/module-detect" name="com.canonical.certification::usb-dwc3/module-detect" time="6.857135534286499"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::usb/storage-detect" name="com.canonical.certification::usb/storage-detect" time="117.35458707809448"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::watchdog/detect" name="com.canonical.certification::watchdog/detect" time="4.16759467124939">
+    </testcase>
+    <testcase classname="com.canonical.certification::watchdog/post-trigger-system-reset-auto" name="com.canonical.certification::watchdog/post-trigger-system-reset-auto" time="0.8989098072052002">
+    </testcase>
+    <testcase classname="com.canonical.certification::watchdog/systemd-config" name="com.canonical.certification::watchdog/systemd-config" time="5.074411630630493"><failure type="">
+      systemd watchdog should be enabled but reset timeout (RuntimeWatchdogUSec) is set to: 0
+In order for the watchdog service to work, the RuntimeWatchdogUSec configuration option must be set before running this test.
+
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::watchdog/trigger-system-reset-auto" name="com.canonical.certification::watchdog/trigger-system-reset-auto" time="2.861922025680542"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/detect" name="com.canonical.certification::wireless/detect" time="4.531933069229126">
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/nmcli_wifi_ap_a_wlan0" name="com.canonical.certification::wireless/nmcli_wifi_ap_a_wlan0" time="12.158194541931152"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/nmcli_wifi_ap_bg_wlan0" name="com.canonical.certification::wireless/nmcli_wifi_ap_bg_wlan0" time="10.4046790599823"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wifi_ap_open_b_no_sta_wlan0_auto" name="com.canonical.certification::wireless/wifi_ap_open_b_no_sta_wlan0_auto" time="8.551244497299194"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wifi_ap_open_g_no_sta_wlan0_auto" name="com.canonical.certification::wireless/wifi_ap_open_g_no_sta_wlan0_auto" time="88.04764103889465"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wifi_ap_setup_wizard_wlan0_auto" name="com.canonical.certification::wireless/wifi_ap_setup_wizard_wlan0_auto" time="8.586170673370361"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wifi_ap_wpa_b_no_sta_wlan0_auto" name="com.canonical.certification::wireless/wifi_ap_wpa_b_no_sta_wlan0_auto" time="9.790781497955322"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wifi_ap_wpa_b_with_sta_wlan0_auto" name="com.canonical.certification::wireless/wifi_ap_wpa_b_with_sta_wlan0_auto" time="91.05792880058289"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wifi_ap_wpa_g_no_sta_wlan0_auto" name="com.canonical.certification::wireless/wifi_ap_wpa_g_no_sta_wlan0_auto" time="92.26888632774353"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wifi_ap_wpa_g_with_sta_wlan0_auto" name="com.canonical.certification::wireless/wifi_ap_wpa_g_with_sta_wlan0_auto" time="10.347899913787842"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_open_ac_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_open_ac_nm_wlan0" time="8.24973726272583"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_open_ac_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_open_ac_np_wlan0" time="8.074193716049194"><failure type="">
+      Interface wlan0 using module brcmfmac
+  Parameters:
+    alternative_fw_path: 
+    debug: 0
+    roamoff: 0
+
+Checking kernel ring buffer for brcmfmac messages:
+
+
+## Backup any existing netplan configuration files
+Clear backup location
+Backing up from /etc/netplan
+  /etc/netplan/00-snapd-config.yaml
+
+## Delete any existing netplan configuration files
+  /etc/netplan/00-snapd-config.yaml
+
+## Generate a test netplan configuration
+## Delete the test file
+Test config /etc/netplan/99-CREATED-BY-CHECKBOX.yaml not found, ignoring...
+
+## Restore configuration files
+Restoring:
+  /etc/netplan/00-snapd-config.yaml
++ netplan --debug apply
+
+A SSID is required for the test
+
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_open_ax_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_open_ax_nm_wlan0" time="7.599359035491943"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_open_ax_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_open_ax_np_wlan0" time="15.48089075088501"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_open_be_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_open_be_nm_wlan0" time="6.951908826828003"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_open_be_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_open_be_np_wlan0" time="14.784955024719238"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_open_bg_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_open_bg_nm_wlan0" time="8.868324518203735"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_open_bg_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_open_bg_np_wlan0" time="8.207802295684814"><failure type="">
+      Interface wlan0 using module brcmfmac
+  Parameters:
+    alternative_fw_path: 
+    debug: 0
+    roamoff: 0
+
+Checking kernel ring buffer for brcmfmac messages:
+
+
+## Backup any existing netplan configuration files
+Clear backup location
+Backing up from /etc/netplan
+  /etc/netplan/00-snapd-config.yaml
+
+## Delete any existing netplan configuration files
+  /etc/netplan/00-snapd-config.yaml
+
+## Generate a test netplan configuration
+## Delete the test file
+Test config /etc/netplan/99-CREATED-BY-CHECKBOX.yaml not found, ignoring...
+
+## Restore configuration files
+Restoring:
+  /etc/netplan/00-snapd-config.yaml
++ netplan --debug apply
+
+A SSID is required for the test
+
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_open_n_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_open_n_nm_wlan0" time="9.48855471611023"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_open_n_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_open_n_np_wlan0" time="8.056543111801147"><failure type="">
+      Interface wlan0 using module brcmfmac
+  Parameters:
+    alternative_fw_path: 
+    debug: 0
+    roamoff: 0
+
+Checking kernel ring buffer for brcmfmac messages:
+kern  :err   : [Fri Jun 26 22:53:56 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:56 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:56 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:56 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:57 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:57 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:57 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+
+
+## Backup any existing netplan configuration files
+Clear backup location
+Backing up from /etc/netplan
+  /etc/netplan/00-snapd-config.yaml
+
+## Delete any existing netplan configuration files
+  /etc/netplan/00-snapd-config.yaml
+
+## Generate a test netplan configuration
+## Delete the test file
+Test config /etc/netplan/99-CREATED-BY-CHECKBOX.yaml not found, ignoring...
+
+## Restore configuration files
+Restoring:
+  /etc/netplan/00-snapd-config.yaml
++ netplan --debug apply
+
+A SSID is required for the test
+
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa3_ax_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa3_ax_nm_wlan0" time="12.120231866836548"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa3_ax_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa3_ax_np_wlan0" time="9.285189867019653"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa3_be_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa3_be_nm_wlan0" time="10.794271469116211"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa3_be_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa3_be_np_wlan0" time="10.53817081451416"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa_ac_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa_ac_nm_wlan0" time="12.860624551773071"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa_ac_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa_ac_np_wlan0" time="86.71146845817566"><failure type="">
+      Interface wlan0 using module brcmfmac
+  Parameters:
+    alternative_fw_path: 
+    debug: 0
+    roamoff: 0
+
+Checking kernel ring buffer for brcmfmac messages:
+kern  :err   : [Fri Jun 26 22:53:56 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:56 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:56 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:56 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:57 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:57 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:57 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:05 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:05 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:05 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:05 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:05 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:05 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:05 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:14 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:14 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:14 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:14 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:14 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:14 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:14 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+
+
+## Backup any existing netplan configuration files
+Clear backup location
+Backing up from /etc/netplan
+  /etc/netplan/00-snapd-config.yaml
+
+## Delete any existing netplan configuration files
+  /etc/netplan/00-snapd-config.yaml
+
+## Generate a test netplan configuration
+# This is the network config written by checkbox
+network:
+  renderer: networkd
+  version: 2
+  wifis:
+    wlan0:
+      access-points:
+        Desi_ghar:
+          auth:
+            key-management: psk
+            password: dontaskmethatever
+      dhcp4: true
+      nameservers: {}
+
+
+## Write the test netplan config file to disk
+
+## Apply the test configuration
++ netplan --debug apply
+
+## Wait for interface to be routable
+ERROR: did not reach routable state
+
+## Delete the test file
+
+## Delete the test file
+Test config /etc/netplan/99-CREATED-BY-CHECKBOX.yaml not found, ignoring...
+
+## Restore configuration files
+Restoring:
+  /etc/netplan/00-snapd-config.yaml
++ netplan --debug apply
+
+## Journal Entries
++ journalctl -q --no-pager -u systemd-networkd.service -u wpa_supplicant.service -u netplan-* --since &#34;2026-06-26 22:54:17&#34; 
+Jun 26 22:54:17 localhost wpa_supplicant[11249]: wlan0: Trying to associate with SSID &#39;Desi_Ghar&#39;
+Jun 26 22:54:17 localhost systemd-networkd[794]: wlan0: Connected WiFi access point: Desi_Ghar (08:bf:b8:52:3a:00)
+Jun 26 22:54:17 localhost wpa_supplicant[11249]: wlan0: Associated with 08:bf:b8:52:3a:00
+Jun 26 22:54:17 localhost wpa_supplicant[11249]: wlan0: CTRL-EVENT-CONNECTED - Connection to 08:bf:b8:52:3a:00 completed [id=0 id_str=]
+Jun 26 22:54:17 localhost wpa_supplicant[11249]: wlan0: CTRL-EVENT-SUBNET-STATUS-UPDATE status=0
+Jun 26 22:54:17 localhost systemd-networkd[794]: wlan0: Gained carrier
+Jun 26 22:54:17 localhost wpa_supplicant[11249]: wlan0: CTRL-EVENT-REGDOM-CHANGE init=COUNTRY_IE type=COUNTRY alpha2=US
+Jun 26 22:54:20 localhost systemd[1]: Stopping netplan-wpa-wlan0.service - WPA supplicant for netplan wlan0...
+Jun 26 22:54:20 localhost wpa_supplicant[11249]: p2p-dev-wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:54:20 localhost wpa_supplicant[11249]: p2p-dev-wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:54:20 localhost wpa_supplicant[11249]: nl80211: deinit ifname=p2p-dev-wlan0 disabled_11b_rates=0
+Jun 26 22:54:20 localhost wpa_supplicant[11249]: p2p-dev-wlan0: CTRL-EVENT-TERMINATING
+Jun 26 22:54:20 localhost wpa_supplicant[11249]: wlan0: CTRL-EVENT-DISCONNECTED bssid=08:bf:b8:52:3a:00 reason=3 locally_generated=1
+Jun 26 22:54:20 localhost systemd-networkd[794]: wlan0: Lost carrier
+Jun 26 22:54:20 localhost wpa_supplicant[11249]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:54:20 localhost systemd-networkd[794]: wlan0: DHCPv6 lease lost
+Jun 26 22:54:20 localhost wpa_supplicant[11249]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:54:20 localhost wpa_supplicant[11249]: nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+Jun 26 22:54:20 localhost wpa_supplicant[11249]: wlan0: CTRL-EVENT-TERMINATING
+Jun 26 22:54:20 localhost systemd-networkd[794]: wlan0: Gained carrier
+Jun 26 22:54:20 localhost systemd[1]: netplan-wpa-wlan0.service: Deactivated successfully.
+Jun 26 22:54:20 localhost systemd[1]: Stopped netplan-wpa-wlan0.service - WPA supplicant for netplan wlan0.
+Jun 26 22:54:21 localhost systemd-networkd[794]: wlan0: Reconfiguring with /run/systemd/network/10-netplan-wlan0.network.
+Jun 26 22:54:21 localhost systemd-networkd[794]: wlan0: DHCPv6 lease lost
+Jun 26 22:54:21 localhost systemd-networkd[794]: end0: Unmanaging interface.
+Jun 26 22:54:21 localhost systemd-networkd[794]: end0: DHCP lease lost
+Jun 26 22:54:21 localhost systemd-networkd[794]: end0: DHCPv6 lease lost
+Jun 26 22:54:21 localhost systemd-networkd[794]: wlan0: Configuring with /run/systemd/network/10-netplan-wlan0.network.
+Jun 26 22:54:21 localhost systemd-networkd[794]: wlan0: DHCPv6 lease lost
+Jun 26 22:54:21 localhost systemd[1]: netplan-ovs-cleanup.service - OpenVSwitch configuration for cleanup was skipped because of an unmet condition check (ConditionFileIsExecutable=/usr/bin/ovs-vsctl).
+Jun 26 22:54:21 localhost systemd[1]: Started netplan-wpa-wlan0.service - WPA supplicant for netplan wlan0.
+Jun 26 22:54:21 localhost wpa_supplicant[11502]: Successfully initialized wpa_supplicant
+Jun 26 22:54:21 localhost systemd-networkd[794]: wlan0: Lost carrier
+Jun 26 22:54:21 localhost systemd-networkd[794]: wlan0: DHCPv6 lease lost
+Jun 26 22:54:51 localhost wpa_supplicant[11502]: wlan0: Failed to initiate sched scan
+Jun 26 22:55:02 localhost wpa_supplicant[11502]: wlan0: Failed to initiate sched scan
+Jun 26 22:55:14 localhost wpa_supplicant[11502]: wlan0: Failed to initiate sched scan
+Jun 26 22:55:25 localhost wpa_supplicant[11502]: wlan0: Failed to initiate sched scan
+Jun 26 22:55:25 localhost systemd[1]: Stopping netplan-wpa-wlan0.service - WPA supplicant for netplan wlan0...
+Jun 26 22:55:25 localhost wpa_supplicant[11502]: p2p-dev-wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:55:25 localhost wpa_supplicant[11502]: p2p-dev-wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:55:25 localhost wpa_supplicant[11502]: nl80211: deinit ifname=p2p-dev-wlan0 disabled_11b_rates=0
+Jun 26 22:55:25 localhost wpa_supplicant[11502]: p2p-dev-wlan0: CTRL-EVENT-TERMINATING
+Jun 26 22:55:25 localhost wpa_supplicant[11502]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:55:25 localhost wpa_supplicant[11502]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:55:25 localhost wpa_supplicant[11502]: nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+Jun 26 22:55:25 localhost wpa_supplicant[11502]: wlan0: CTRL-EVENT-TERMINATING
+Jun 26 22:55:25 localhost systemd-networkd[794]: wlan0: Gained carrier
+Jun 26 22:55:25 localhost systemd[1]: netplan-wpa-wlan0.service: Deactivated successfully.
+Jun 26 22:55:25 localhost systemd[1]: Stopped netplan-wpa-wlan0.service - WPA supplicant for netplan wlan0.
+Jun 26 22:55:26 localhost systemd-networkd[794]: wlan0: Reconfiguring with /run/systemd/network/10-netplan-wlan0.network.
+Jun 26 22:55:26 localhost systemd-networkd[794]: wlan0: DHCPv6 lease lost
+Jun 26 22:55:26 localhost systemd-networkd[794]: end0: Reconfiguring with /run/systemd/network/10-netplan-end0.network.
+Jun 26 22:55:26 localhost systemd-networkd[794]: end0: DHCPv4 address 192.168.50.47/24, gateway 192.168.50.1 acquired from 192.168.50.1
+Jun 26 22:55:26 localhost systemd-networkd[794]: wlan0: Configuring with /run/systemd/network/10-netplan-wlan0.network.
+Jun 26 22:55:26 localhost systemd-networkd[794]: wlan0: DHCPv6 lease lost
+Jun 26 22:55:26 localhost systemd[1]: netplan-ovs-cleanup.service - OpenVSwitch configuration for cleanup was skipped because of an unmet condition check (ConditionFileIsExecutable=/usr/bin/ovs-vsctl).
+Jun 26 22:55:26 localhost systemd[1]: Started netplan-wpa-wlan0.service - WPA supplicant for netplan wlan0.
+Jun 26 22:55:26 localhost wpa_supplicant[11774]: Successfully initialized wpa_supplicant
+Jun 26 22:55:26 localhost systemd-networkd[794]: wlan0: Lost carrier
+Jun 26 22:55:26 localhost systemd-networkd[794]: wlan0: DHCPv6 lease lost
+
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa_ax_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa_ax_nm_wlan0" time="11.414000034332275"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa_ax_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa_ax_np_wlan0" time="8.645384550094604"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa_be_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa_be_nm_wlan0" time="10.17223334312439"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa_be_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa_be_np_wlan0" time="9.908689022064209"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa_bg_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa_bg_nm_wlan0" time="13.485410690307617"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa_bg_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa_bg_np_wlan0" time="115.69084858894348"><failure type="">
+      Interface wlan0 using module brcmfmac
+  Parameters:
+    alternative_fw_path: 
+    debug: 0
+    roamoff: 0
+
+Checking kernel ring buffer for brcmfmac messages:
+kern  :err   : [Fri Jun 26 22:53:56 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:56 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:56 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:56 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:57 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:57 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:57 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:05 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:05 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:05 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:05 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:05 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:05 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:05 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:14 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:14 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:14 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:14 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:14 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:14 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:14 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:25 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:25 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:25 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:25 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:25 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:25 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:25 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:36 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:36 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:36 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:36 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:37 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:37 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:37 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:48 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:48 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:48 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:48 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:48 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:48 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:48 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:59 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:59 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:59 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:59 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:59 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:00 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:00 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:11 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:11 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:11 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:11 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:11 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:11 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:11 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:22 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:22 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:22 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:22 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:23 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:23 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:23 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:30 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:30 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:30 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:30 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:30 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:30 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:30 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+
+
+## Backup any existing netplan configuration files
+Clear backup location
+Backing up from /etc/netplan
+  /etc/netplan/00-snapd-config.yaml
+
+## Delete any existing netplan configuration files
+  /etc/netplan/00-snapd-config.yaml
+
+## Generate a test netplan configuration
+# This is the network config written by checkbox
+network:
+  renderer: networkd
+  version: 2
+  wifis:
+    wlan0:
+      access-points:
+        Desi_ghar:
+          auth:
+            key-management: psk
+            password: dontaskmethatever
+      dhcp4: true
+      nameservers: {}
+
+
+## Write the test netplan config file to disk
+
+## Apply the test configuration
++ netplan --debug apply
+
+## Wait for interface to be routable
+ERROR: did not reach routable state
+
+## Delete the test file
+
+## Delete the test file
+Test config /etc/netplan/99-CREATED-BY-CHECKBOX.yaml not found, ignoring...
+
+## Restore configuration files
+Restoring:
+  /etc/netplan/00-snapd-config.yaml
++ netplan --debug apply
+
+## Journal Entries
++ journalctl -q --no-pager -u systemd-networkd.service -u wpa_supplicant.service -u netplan-* --since &#34;2026-06-26 22:55:44&#34; 
+Jun 26 22:55:48 localhost systemd[1]: Stopping netplan-wpa-wlan0.service - WPA supplicant for netplan wlan0...
+Jun 26 22:55:48 localhost wpa_supplicant[11774]: p2p-dev-wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:55:48 localhost wpa_supplicant[11774]: p2p-dev-wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:55:48 localhost wpa_supplicant[11774]: nl80211: deinit ifname=p2p-dev-wlan0 disabled_11b_rates=0
+Jun 26 22:55:48 localhost wpa_supplicant[11774]: p2p-dev-wlan0: CTRL-EVENT-TERMINATING
+Jun 26 22:55:48 localhost wpa_supplicant[11774]: wlan0: CTRL-EVENT-DISCONNECTED bssid=08:bf:b8:52:3a:00 reason=3 locally_generated=1
+Jun 26 22:55:48 localhost systemd-networkd[794]: wlan0: Lost carrier
+Jun 26 22:55:48 localhost systemd-networkd[794]: wlan0: DHCP lease lost
+Jun 26 22:55:48 localhost wpa_supplicant[11774]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:55:48 localhost systemd-networkd[794]: wlan0: DHCPv6 lease lost
+Jun 26 22:55:48 localhost wpa_supplicant[11774]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:55:48 localhost wpa_supplicant[11774]: nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+Jun 26 22:55:48 localhost wpa_supplicant[11774]: wlan0: CTRL-EVENT-TERMINATING
+Jun 26 22:55:48 localhost systemd-networkd[794]: wlan0: Gained carrier
+Jun 26 22:55:48 localhost systemd[1]: netplan-wpa-wlan0.service: Deactivated successfully.
+Jun 26 22:55:48 localhost systemd[1]: Stopped netplan-wpa-wlan0.service - WPA supplicant for netplan wlan0.
+Jun 26 22:55:48 localhost systemd-networkd[794]: wlan0: Reconfiguring with /run/systemd/network/10-netplan-wlan0.network.
+Jun 26 22:55:48 localhost systemd-networkd[794]: wlan0: DHCPv6 lease lost
+Jun 26 22:55:48 localhost systemd-networkd[794]: end0: Unmanaging interface.
+Jun 26 22:55:48 localhost systemd-networkd[794]: end0: DHCP lease lost
+Jun 26 22:55:48 localhost systemd-networkd[794]: end0: DHCPv6 lease lost
+Jun 26 22:55:48 localhost systemd-networkd[794]: wlan0: Configuring with /run/systemd/network/10-netplan-wlan0.network.
+Jun 26 22:55:48 localhost systemd-networkd[794]: wlan0: DHCPv6 lease lost
+Jun 26 22:55:48 localhost systemd[1]: netplan-ovs-cleanup.service - OpenVSwitch configuration for cleanup was skipped because of an unmet condition check (ConditionFileIsExecutable=/usr/bin/ovs-vsctl).
+Jun 26 22:55:48 localhost systemd[1]: Started netplan-wpa-wlan0.service - WPA supplicant for netplan wlan0.
+Jun 26 22:55:48 localhost wpa_supplicant[12029]: Successfully initialized wpa_supplicant
+Jun 26 22:55:48 localhost systemd-networkd[794]: wlan0: Lost carrier
+Jun 26 22:55:48 localhost systemd-networkd[794]: wlan0: DHCPv6 lease lost
+Jun 26 22:56:18 localhost wpa_supplicant[12029]: wlan0: Failed to initiate sched scan
+Jun 26 22:56:29 localhost wpa_supplicant[12029]: wlan0: Failed to initiate sched scan
+Jun 26 22:56:41 localhost wpa_supplicant[12029]: wlan0: Failed to initiate sched scan
+Jun 26 22:56:52 localhost wpa_supplicant[12029]: wlan0: Failed to initiate sched scan
+Jun 26 22:56:52 localhost systemd[1]: Stopping netplan-wpa-wlan0.service - WPA supplicant for netplan wlan0...
+Jun 26 22:56:52 localhost wpa_supplicant[12029]: p2p-dev-wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:56:52 localhost wpa_supplicant[12029]: p2p-dev-wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:56:52 localhost wpa_supplicant[12029]: nl80211: deinit ifname=p2p-dev-wlan0 disabled_11b_rates=0
+Jun 26 22:56:53 localhost wpa_supplicant[12029]: p2p-dev-wlan0: CTRL-EVENT-TERMINATING
+Jun 26 22:56:53 localhost wpa_supplicant[12029]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:56:53 localhost wpa_supplicant[12029]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:56:53 localhost wpa_supplicant[12029]: nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+Jun 26 22:56:53 localhost wpa_supplicant[12029]: wlan0: CTRL-EVENT-TERMINATING
+Jun 26 22:56:53 localhost systemd-networkd[794]: wlan0: Gained carrier
+Jun 26 22:56:53 localhost systemd[1]: netplan-wpa-wlan0.service: Deactivated successfully.
+Jun 26 22:56:53 localhost systemd[1]: Stopped netplan-wpa-wlan0.service - WPA supplicant for netplan wlan0.
+Jun 26 22:56:53 localhost systemd-networkd[794]: wlan0: Reconfiguring with /run/systemd/network/10-netplan-wlan0.network.
+Jun 26 22:56:53 localhost systemd-networkd[794]: wlan0: DHCPv6 lease lost
+Jun 26 22:56:53 localhost systemd-networkd[794]: end0: Reconfiguring with /run/systemd/network/10-netplan-end0.network.
+Jun 26 22:56:53 localhost systemd-networkd[794]: end0: DHCPv4 address 192.168.50.47/24, gateway 192.168.50.1 acquired from 192.168.50.1
+Jun 26 22:56:53 localhost systemd-networkd[794]: end0: Configuring with /run/systemd/network/10-netplan-end0.network.
+Jun 26 22:56:53 localhost systemd-networkd[794]: end0: DHCP lease lost
+Jun 26 22:56:53 localhost systemd-networkd[794]: end0: DHCPv6 lease lost
+Jun 26 22:56:53 localhost systemd-networkd[794]: wlan0: Configuring with /run/systemd/network/10-netplan-wlan0.network.
+Jun 26 22:56:53 localhost systemd-networkd[794]: wlan0: DHCPv6 lease lost
+Jun 26 22:56:53 localhost systemd[1]: netplan-ovs-cleanup.service - OpenVSwitch configuration for cleanup was skipped because of an unmet condition check (ConditionFileIsExecutable=/usr/bin/ovs-vsctl).
+Jun 26 22:56:53 localhost systemd-networkd[794]: end0: DHCPv4 address 192.168.50.47/24, gateway 192.168.50.1 acquired from 192.168.50.1
+Jun 26 22:56:53 localhost systemd[1]: Started netplan-wpa-wlan0.service - WPA supplicant for netplan wlan0.
+Jun 26 22:56:53 localhost wpa_supplicant[12299]: Successfully initialized wpa_supplicant
+Jun 26 22:56:53 localhost systemd-networkd[794]: wlan0: Lost carrier
+Jun 26 22:56:53 localhost systemd-networkd[794]: wlan0: DHCPv6 lease lost
+
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa_n_nm_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa_n_nm_wlan0" time="14.148352861404419"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_connection_wpa_n_np_wlan0" name="com.canonical.certification::wireless/wireless_connection_wpa_n_np_wlan0" time="114.16915440559387"><failure type="">
+      Interface wlan0 using module brcmfmac
+  Parameters:
+    alternative_fw_path: 
+    debug: 0
+    roamoff: 0
+
+Checking kernel ring buffer for brcmfmac messages:
+kern  :err   : [Fri Jun 26 22:53:56 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:56 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:56 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:56 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:57 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:57 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:53:57 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:05 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:05 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:05 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:05 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:05 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:05 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:05 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:14 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:14 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:14 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:14 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:14 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:14 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:14 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:25 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:25 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:25 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:25 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:25 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:25 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:25 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:36 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:36 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:36 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:36 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:37 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:37 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:37 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:48 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:48 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:48 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:48 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:48 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:48 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:48 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:59 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:59 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:59 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:59 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:54:59 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:00 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:00 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:11 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:11 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:11 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:11 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:11 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:11 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:11 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:22 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:22 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:22 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:22 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:23 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:23 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:23 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:30 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:30 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:30 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:30 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:30 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:30 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:30 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:52 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:52 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:52 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:52 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:52 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:53 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:55:53 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:04 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:04 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:04 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:04 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:04 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:04 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:04 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:15 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:15 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:15 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:15 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:15 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:15 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:16 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:27 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:27 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:27 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:27 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:27 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:27 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:27 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:38 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:38 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:38 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:38 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:38 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:39 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:39 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:50 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:50 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:50 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:50 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:50 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:50 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:50 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:57 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100c fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:57 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100d fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:57 2026] brcmfmac: brcmf_set_channel: set chanspec 0x100e fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:57 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd022 fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:57 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd026 fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:57 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02a fail, reason -52
+kern  :err   : [Fri Jun 26 22:56:57 2026] brcmfmac: brcmf_set_channel: set chanspec 0xd02e fail, reason -52
+
+
+## Backup any existing netplan configuration files
+Clear backup location
+Backing up from /etc/netplan
+  /etc/netplan/00-snapd-config.yaml
+
+## Delete any existing netplan configuration files
+  /etc/netplan/00-snapd-config.yaml
+
+## Generate a test netplan configuration
+# This is the network config written by checkbox
+network:
+  renderer: networkd
+  version: 2
+  wifis:
+    wlan0:
+      access-points:
+        Desi_ghar:
+          auth:
+            key-management: psk
+            password: dontaskmethatever
+      dhcp4: true
+      nameservers: {}
+
+
+## Write the test netplan config file to disk
+
+## Apply the test configuration
++ netplan --debug apply
+
+## Wait for interface to be routable
+ERROR: did not reach routable state
+
+## Delete the test file
+
+## Delete the test file
+Test config /etc/netplan/99-CREATED-BY-CHECKBOX.yaml not found, ignoring...
+
+## Restore configuration files
+Restoring:
+  /etc/netplan/00-snapd-config.yaml
++ netplan --debug apply
+
+## Journal Entries
++ journalctl -q --no-pager -u systemd-networkd.service -u wpa_supplicant.service -u netplan-* --since &#34;2026-06-26 22:57:41&#34; 
+Jun 26 22:57:44 localhost systemd[1]: Stopping netplan-wpa-wlan0.service - WPA supplicant for netplan wlan0...
+Jun 26 22:57:44 localhost wpa_supplicant[12299]: p2p-dev-wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:57:44 localhost wpa_supplicant[12299]: p2p-dev-wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:57:44 localhost wpa_supplicant[12299]: nl80211: deinit ifname=p2p-dev-wlan0 disabled_11b_rates=0
+Jun 26 22:57:44 localhost wpa_supplicant[12299]: p2p-dev-wlan0: CTRL-EVENT-TERMINATING
+Jun 26 22:57:44 localhost wpa_supplicant[12299]: wlan0: CTRL-EVENT-DISCONNECTED bssid=08:bf:b8:52:3a:00 reason=3 locally_generated=1
+Jun 26 22:57:44 localhost systemd-networkd[794]: wlan0: Lost carrier
+Jun 26 22:57:44 localhost systemd-networkd[794]: wlan0: DHCP lease lost
+Jun 26 22:57:44 localhost wpa_supplicant[12299]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:57:44 localhost systemd-networkd[794]: wlan0: DHCPv6 lease lost
+Jun 26 22:57:44 localhost wpa_supplicant[12299]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:57:44 localhost wpa_supplicant[12299]: nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+Jun 26 22:57:44 localhost wpa_supplicant[12299]: wlan0: CTRL-EVENT-TERMINATING
+Jun 26 22:57:44 localhost systemd-networkd[794]: wlan0: Gained carrier
+Jun 26 22:57:44 localhost systemd[1]: netplan-wpa-wlan0.service: Deactivated successfully.
+Jun 26 22:57:44 localhost systemd[1]: Stopped netplan-wpa-wlan0.service - WPA supplicant for netplan wlan0.
+Jun 26 22:57:44 localhost systemd-networkd[794]: wlan0: Reconfiguring with /run/systemd/network/10-netplan-wlan0.network.
+Jun 26 22:57:44 localhost systemd-networkd[794]: wlan0: DHCPv6 lease lost
+Jun 26 22:57:44 localhost systemd-networkd[794]: end0: Unmanaging interface.
+Jun 26 22:57:44 localhost systemd-networkd[794]: end0: DHCP lease lost
+Jun 26 22:57:44 localhost systemd-networkd[794]: end0: DHCPv6 lease lost
+Jun 26 22:57:44 localhost systemd-networkd[794]: wlan0: Configuring with /run/systemd/network/10-netplan-wlan0.network.
+Jun 26 22:57:44 localhost systemd-networkd[794]: wlan0: DHCPv6 lease lost
+Jun 26 22:57:44 localhost systemd[1]: netplan-ovs-cleanup.service - OpenVSwitch configuration for cleanup was skipped because of an unmet condition check (ConditionFileIsExecutable=/usr/bin/ovs-vsctl).
+Jun 26 22:57:44 localhost systemd[1]: Started netplan-wpa-wlan0.service - WPA supplicant for netplan wlan0.
+Jun 26 22:57:45 localhost wpa_supplicant[12550]: Successfully initialized wpa_supplicant
+Jun 26 22:57:45 localhost systemd-networkd[794]: wlan0: Lost carrier
+Jun 26 22:57:45 localhost systemd-networkd[794]: wlan0: DHCPv6 lease lost
+Jun 26 22:58:14 localhost wpa_supplicant[12550]: wlan0: Failed to initiate sched scan
+Jun 26 22:58:25 localhost wpa_supplicant[12550]: wlan0: Failed to initiate sched scan
+Jun 26 22:58:37 localhost wpa_supplicant[12550]: wlan0: Failed to initiate sched scan
+Jun 26 22:58:48 localhost wpa_supplicant[12550]: wlan0: Failed to initiate sched scan
+Jun 26 22:58:48 localhost systemd[1]: Stopping netplan-wpa-wlan0.service - WPA supplicant for netplan wlan0...
+Jun 26 22:58:48 localhost wpa_supplicant[12550]: p2p-dev-wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:58:48 localhost wpa_supplicant[12550]: p2p-dev-wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:58:48 localhost wpa_supplicant[12550]: nl80211: deinit ifname=p2p-dev-wlan0 disabled_11b_rates=0
+Jun 26 22:58:49 localhost wpa_supplicant[12550]: p2p-dev-wlan0: CTRL-EVENT-TERMINATING
+Jun 26 22:58:49 localhost wpa_supplicant[12550]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:58:49 localhost wpa_supplicant[12550]: wlan0: CTRL-EVENT-DSCP-POLICY clear_all
+Jun 26 22:58:49 localhost wpa_supplicant[12550]: nl80211: deinit ifname=wlan0 disabled_11b_rates=0
+Jun 26 22:58:49 localhost wpa_supplicant[12550]: wlan0: CTRL-EVENT-TERMINATING
+Jun 26 22:58:49 localhost systemd-networkd[794]: wlan0: Gained carrier
+Jun 26 22:58:49 localhost systemd[1]: netplan-wpa-wlan0.service: Deactivated successfully.
+Jun 26 22:58:49 localhost systemd[1]: Stopped netplan-wpa-wlan0.service - WPA supplicant for netplan wlan0.
+Jun 26 22:58:49 localhost systemd-networkd[794]: wlan0: Reconfiguring with /run/systemd/network/10-netplan-wlan0.network.
+Jun 26 22:58:49 localhost systemd-networkd[794]: wlan0: DHCPv6 lease lost
+Jun 26 22:58:49 localhost systemd-networkd[794]: end0: Reconfiguring with /run/systemd/network/10-netplan-end0.network.
+Jun 26 22:58:49 localhost systemd-networkd[794]: end0: DHCPv4 address 192.168.50.47/24, gateway 192.168.50.1 acquired from 192.168.50.1
+Jun 26 22:58:49 localhost systemd-networkd[794]: end0: Configuring with /run/systemd/network/10-netplan-end0.network.
+Jun 26 22:58:49 localhost systemd-networkd[794]: end0: DHCP lease lost
+Jun 26 22:58:49 localhost systemd-networkd[794]: end0: DHCPv6 lease lost
+Jun 26 22:58:49 localhost systemd-networkd[794]: wlan0: Configuring with /run/systemd/network/10-netplan-wlan0.network.
+Jun 26 22:58:49 localhost systemd-networkd[794]: wlan0: DHCPv6 lease lost
+Jun 26 22:58:49 localhost systemd[1]: netplan-ovs-cleanup.service - OpenVSwitch configuration for cleanup was skipped because of an unmet condition check (ConditionFileIsExecutable=/usr/bin/ovs-vsctl).
+Jun 26 22:58:49 localhost systemd-networkd[794]: end0: DHCPv4 address 192.168.50.47/24, gateway 192.168.50.1 acquired from 192.168.50.1
+Jun 26 22:58:49 localhost systemd[1]: Started netplan-wpa-wlan0.service - WPA supplicant for netplan wlan0.
+Jun 26 22:58:49 localhost wpa_supplicant[12822]: Successfully initialized wpa_supplicant
+Jun 26 22:58:49 localhost systemd-networkd[794]: wlan0: Lost carrier
+Jun 26 22:58:49 localhost systemd-networkd[794]: wlan0: DHCPv6 lease lost
+
+      </failure>
+    </testcase>
+    <testcase classname="com.canonical.certification::wireless/wireless_scanning_wlan0" name="com.canonical.certification::wireless/wireless_scanning_wlan0" time="6.3317155838012695"><skipped />
+    </testcase>
+    <testcase classname="com.canonical.certification::wwan/detect" name="com.canonical.certification::wwan/detect" time="117.97910618782043"><skipped />
+    </testcase>
+  </testsuites>

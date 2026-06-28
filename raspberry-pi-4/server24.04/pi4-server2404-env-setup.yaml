@@ -1,0 +1,157 @@
+## Envicorn environment setup — Ubuntu Server 24.04
+## Test plan: ce-oem-iot-server-24-04-automated (com.canonical.contrib)
+##
+## Board: Raspberry Pi 4 on Ubuntu Server 24.04
+## Ethernet: eth0 | WiFi: wlan0 (brcmfmac) | Watchdog: bcm2835_wdt | RTC: none
+## IP pinned by router DHCP reservation (no board-side static IP).
+##
+## Run from host (placeholders filled by run-pi4.sh from .local.env):
+##   ceqa-env-setup-tools.test-env-setup setup \
+##     -f pi4-server2404-env-setup.yaml \
+##     --remote-ip <PI_IP> --username <USER> --password <PASSWORD>
+
+actions:
+
+  # ── Passwordless sudo (required for non-interactive SSH) ────────────────────
+  # Cache creds with `sudo -S -v` FIRST; do not pipe the password into a
+  # `sudo ... << EOF` heredoc (the heredoc steals stdin and auth fails).
+  - action: ssh_command
+    command: |
+      printf '%s\n' '<PASSWORD>' | sudo -S -v
+      echo '<USER> ALL=(ALL) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/99-nopasswd > /dev/null
+      sudo chmod 440 /etc/sudoers.d/99-nopasswd
+
+  # ── Checkbox snaps ─────────────────────────────────────────────────────────
+  - action: install_snap
+    name: checkbox24
+    track: latest
+    risk: stable
+
+  - action: install_snap
+    name: checkbox
+    track: latest
+    risk: stable
+    mode: classic
+
+  - action: install_snap
+    name: checkbox-ce-oem
+    track: latest
+    risk: stable
+    mode: classic
+
+  # ── Debian test dependencies ───────────────────────────────────────────────
+  - action: install_debian
+    name: bluez
+  - action: install_debian
+    name: bluez-tools
+  - action: install_debian
+    name: fwts
+  - action: install_debian
+    name: stress-ng
+  - action: install_debian
+    name: wpasupplicant
+  - action: install_debian
+    name: wireless-tools
+  - action: install_debian
+    name: docker.io
+  - action: install_debian
+    name: watchdog
+  - action: install_debian
+    name: usbutils
+  - action: install_debian
+    name: dmidecode
+  - action: install_debian
+    name: pciutils
+  - action: install_debian
+    name: iperf3
+  - action: install_debian
+    name: ethtool
+  - action: install_debian
+    name: alsa-utils
+  - action: install_debian
+    name: i2c-tools
+
+  # Docker Compose v2 plugin
+  - action: ssh_command
+    command: |
+      sudo apt install -y ca-certificates curl
+      sudo install -m 0755 -d /etc/apt/keyrings
+      sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg \
+        -o /etc/apt/keyrings/docker.asc
+      sudo chmod a+r /etc/apt/keyrings/docker.asc
+      echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] \
+        https://download.docker.com/linux/ubuntu \
+        $(. /etc/os-release && echo "$VERSION_CODENAME") stable" \
+        | sudo tee /etc/apt/sources.list.d/docker.list
+      sudo apt update
+      sudo apt install -y docker-compose-plugin
+
+  # ── Networking ─────────────────────────────────────────────────────────────
+  # No board-side static IP — pinned by router DHCP reservation (eth0 MAC).
+
+  # ── Hardware watchdog (Pi 4: bcm2835_wdt) ──────────────────────────────────
+  - action: ssh_command
+    command: |
+      sudo modprobe bcm2835_wdt 2>/dev/null || true
+      echo 'bcm2835_wdt' | sudo tee /etc/modules-load.d/watchdog.conf
+      sudo mkdir -p /etc/systemd/system.conf.d
+      sudo tee /etc/systemd/system.conf.d/10-watchdog.conf << 'EOF'
+      [Manager]
+      RuntimeWatchdogUSec=15s
+      EOF
+      sudo systemctl daemon-reload
+      sudo systemctl daemon-reexec
+
+  # ── Machine manifest ───────────────────────────────────────────────────────
+  # Pi 4 Server: has WiFi + BT + HDMI audio playback + ethernet + watchdog.
+  - action: ssh_command
+    command: |
+      sudo mkdir -p /var/tmp/checkbox-ng
+      sudo tee /var/tmp/checkbox-ng/machine-manifest.json << 'MANIFEST'
+      {
+        "com.canonical.certification::gpio_loopback": false,
+        "com.canonical.certification::has_audio_capture": false,
+        "com.canonical.certification::has_audio_playback": true,
+        "com.canonical.certification::has_bt_adapter": true,
+        "com.canonical.certification::has_bt_smart": true,
+        "com.canonical.certification::has_ethernet_adapter": true,
+        "com.canonical.certification::has_hardware_watchdog": true,
+        "com.canonical.certification::has_hdmi": true,
+        "com.canonical.certification::has_i2c": false,
+        "com.canonical.certification::has_secure_boot": false,
+        "com.canonical.certification::has_tpm2_chip": false,
+        "com.canonical.certification::has_usb_storage": false,
+        "com.canonical.certification::has_wlan_adapter": true,
+        "com.canonical.certification::socket_can_echo_server_running": false
+      }
+      MANIFEST
+
+  # ── Docker post-install ────────────────────────────────────────────────────
+  - action: ssh_command
+    command: |
+      sudo systemctl enable --now docker
+      sudo usermod -aG docker $USER
+      sudo ln -sf /usr/libexec/docker/cli-plugins/docker-compose \
+        /usr/local/bin/docker-compose 2>/dev/null || true
+
+  # ── Start the CE-OEM remote agent ──────────────────────────────────────────
+  # contrib test plan -> needs checkbox-ce-oem.remote-slave, NOT checkbox.agent.
+  # Both listen on 18871, so stop checkbox.agent first.
+  - action: ssh_command
+    command: |
+      sudo snap stop --disable checkbox.agent 2>/dev/null || true
+      sudo snap start --enable checkbox-ce-oem.remote-slave
+
+  # ── Verify ─────────────────────────────────────────────────────────────────
+  - action: ssh_command
+    command: |
+      echo "=== Snaps ==="
+      snap list checkbox24 checkbox checkbox-ce-oem
+      echo "=== Agent (remote-slave should be active) ==="
+      snap services checkbox-ce-oem | grep remote-slave || true
+      echo "=== Watchdog ==="
+      lsmod | grep wdt || echo "WARNING: no wdt module"
+      echo "=== Interfaces ==="
+      ip -br addr | grep -E 'eth0|wlan0' || true
+      echo "=== Manifest ==="
+      cat /var/tmp/checkbox-ng/machine-manifest.json

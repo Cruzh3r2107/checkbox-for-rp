@@ -1,0 +1,37 @@
+#!/usr/bin/env checkbox-cli
+
+[launcher]
+app_id = com.canonical.certification:rapid-prototype-pi4-server2404
+launcher_version = 1
+stock_reports = text, submission_files, json
+
+[test plan]
+unit = com.canonical.contrib::ce-oem-iot-server-24-04-automated
+forced = yes
+
+[test selection]
+forced = yes
+
+[ui]
+type = silent
+auto_retry = yes
+max_attempts = 3
+delay_before_retry = 15
+
+[environment]
+# WiFi — Pi 4 has a brcmfmac adapter. Put creds here (checkbox.conf is not
+# reliably read in remote mode). Filled from .local.env by run-pi4.sh.
+WPA_BG_SSID=<WIFI_SSID>
+WPA_BG_PSK=<WIFI_PSK>
+WPA_N_SSID=<WIFI_SSID>
+WPA_N_PSK=<WIFI_PSK>
+WPA_AC_SSID=<WIFI_SSID>
+WPA_AC_PSK=<WIFI_PSK>
+
+# WiFi — open (no open AP available in lab)
+OPEN_BG_SSID=
+OPEN_N_SSID=
+OPEN_AC_SSID=
+
+# RTC: Pi 4 has no hardware RTC
+TOTAL_RTC_NUM=0

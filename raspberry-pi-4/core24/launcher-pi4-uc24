@@ -1,0 +1,40 @@
+#!/usr/bin/env checkbox-cli
+
+[launcher]
+app_id = com.canonical.certification:rapid-prototype-pi4-uc24
+launcher_version = 1
+stock_reports = text, submission_files, json
+
+[test plan]
+unit = com.canonical.certification::client-cert-iot-ubuntucore-24-automated
+forced = yes
+
+[test selection]
+forced = yes
+# NO SKIP: snapd refresh/revert included. They reboot the board (it recovers) and
+# mostly fail structurally (need beta/candidate channels) — recorded honestly.
+# Must run from a CLEAN session (clear the DUT session first) or the resumed
+# session replays the reboot job in a loop.
+
+[ui]
+type = silent
+auto_retry = yes
+max_attempts = 3
+delay_before_retry = 15
+
+[environment]
+# WiFi — WPA-encrypted (lab AP must support BG/N/AC). Fill in before running.
+WPA_BG_SSID=<WIFI_SSID>
+WPA_BG_PSK=<WIFI_PSK>
+WPA_N_SSID=<WIFI_SSID>
+WPA_N_PSK=<WIFI_PSK>
+WPA_AC_SSID=<WIFI_SSID>
+WPA_AC_PSK=<WIFI_PSK>
+
+# WiFi — open (no open AP available in lab)
+OPEN_BG_SSID=
+OPEN_N_SSID=
+OPEN_AC_SSID=
+
+# RTC: Pi 4 on Ubuntu Core 24 exposes no /dev/rtc* device
+TOTAL_RTC_NUM=0

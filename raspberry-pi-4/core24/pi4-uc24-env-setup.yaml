@@ -1,0 +1,150 @@
+## Envicorn environment setup for Raspberry Pi 4 — Ubuntu Core 24
+## Test plan target: client-cert-iot-ubuntucore-24-automated (com.canonical.certification)
+##
+## Run from host:
+##   ceqa-env-setup-tools.test-env-setup setup \
+##     -f pi4-uc24-env-setup.yaml \
+##     --remote-ip <PI_IP> --username <USER> --password <PASSWORD>
+##
+## Note: checkbox24 (core runtime) is pulled in automatically as a dependency
+## of the checkbox frontend snap via default-provider. No need to install separately.
+## devmode is the standard Canonical approach for checkbox on Ubuntu Core.
+
+actions:
+
+  # ── Checkbox frontend snap ─────────────────────────────────────────────────
+  # devmode is standard for checkbox on UC (not a workaround).
+  # checkbox24 core snap is auto-installed as a dependency.
+
+  - action: install_snap
+    name: checkbox
+    track: uc24
+    risk: stable
+    mode: devmode
+
+  # ── Bluez snap ────────────────────────────────────────────────────────────
+  # Required for Bluetooth resource detection on UC24.
+  # checkbox24:bluez must be connected to bluez:service for BT tests to run.
+
+  - action: install_snap
+    name: bluez
+    track: latest
+    risk: stable
+
+  # ── Docker (unlocks the ~20 docker certification jobs on UC24) ──────────────
+  # On Ubuntu Core, docker is a snap. docker:home must be connected manually;
+  # the rest auto-connect. This makes the `docker` resource job detect docker so
+  # the docker tests run instead of being gated to cannot_start.
+
+  - action: install_snap
+    name: docker
+    track: latest
+    risk: stable
+
+  - action: ssh_command
+    command: |
+      sudo snap connect bluez:bluetooth-control :bluetooth-control
+      sudo snap connect checkbox24:bluez bluez:service
+      # Bring the adapter up so bluetooth/detect-output sees it (it reported
+      # "BT hardware not available"): unblock rfkill, start the bluez service,
+      # power the adapter on. bluetoothctl is interactive and HANGS over
+      # non-interactive SSH, so wrap it in `timeout`. All best-effort + timeouts
+      # so this action can never block provisioning.
+      sudo rfkill unblock bluetooth 2>/dev/null || true
+      sudo snap start bluez 2>/dev/null || true
+      sudo timeout 5 bluez.bluetoothctl -- power on 2>/dev/null || true
+      # Connect docker:home (other docker plugs auto-connect) and start it.
+      sudo snap connect docker:home 2>/dev/null || true
+      sudo snap start docker 2>/dev/null || true
+      # Best-effort WiFi pre-warm: the first association after boot is slowest
+      # (brcmfmac firmware load), and the wireless test's routable wait is only
+      # 30s. Unblock + load + scan so the in-test association is faster.
+      sudo rfkill unblock wifi 2>/dev/null || true
+      sudo modprobe brcmfmac 2>/dev/null || true
+      sudo timeout 10 iw dev wlan0 scan >/dev/null 2>&1 || true
+
+  # ── Networking ─────────────────────────────────────────────────────────────
+  # No board-side static IP. The Ethernet address is pinned by a DHCP reservation
+  # on the router (Pi end0 MAC -> <PI_IP>), which survives the mid-test reboot.
+  # We deliberately leave the board's networking untouched — reconfiguring netplan
+  # here is what dropped the board mid-provision on the previous run.
+  # WiFi tests associate wlan0 transiently using the WPA_* creds in the launcher;
+  # no persistent WiFi config is needed for the certification run.
+
+  # ── Machine manifest ───────────────────────────────────────────────────────
+  # Declares hardware present on this Pi 4 UC24.
+  # Tests for hardware set to false are gated before execution (correct skip,
+  # not a failure). Adjust values for your specific unit's physical config.
+
+  - action: ssh_command
+    command: |
+      sudo mkdir -p /var/tmp/checkbox-ng
+      sudo tee /var/tmp/checkbox-ng/machine-manifest.json << 'MANIFEST'
+      {
+        "com.canonical.certification::gpio_loopback": false,
+        "com.canonical.certification::need_gadget_snap_update_test": true,
+        "com.canonical.certification::need_kernel_snap_update_test": true,
+        "com.canonical.certification::need_snapd_snap_update_test": true,
+        "com.canonical.certification::has_audio_capture": false,
+        "com.canonical.certification::has_audio_playback": true,
+        "com.canonical.certification::has_bt_adapter": true,
+        "com.canonical.certification::has_bt_obex_support": false,
+        "com.canonical.certification::has_bt_smart": true,
+        "com.canonical.certification::has_ethernet_adapter": true,
+        "com.canonical.certification::has_hardware_watchdog": true,
+        "com.canonical.certification::has_hdmi": true,
+        "com.canonical.certification::has_i2c": false,
+        "com.canonical.certification::has_secure_boot": false,
+        "com.canonical.certification::has_tpm2_chip": false,
+        "com.canonical.certification::has_usb_storage": false,
+        "com.canonical.certification::has_wlan_adapter": true,
+        "com.canonical.certification::socket_can_echo_server_running": false
+      }
+      MANIFEST
+
+  # ── Hardware watchdog ─────────────────────────────────────────────────────
+  # Same requirement as Ubuntu Server: watchdog/systemd-config checks
+  # RuntimeWatchdogUSec, not the watchdog daemon.
+
+  - action: ssh_command
+    command: |
+      sudo modprobe bcm2835_wdt
+      echo 'bcm2835_wdt' | sudo tee /etc/modules-load.d/bcm2835-wdt.conf
+      sudo mkdir -p /etc/systemd/system.conf.d
+      sudo tee /etc/systemd/system.conf.d/10-watchdog.conf << 'EOF'
+      [Manager]
+      RuntimeWatchdogUSec=15s
+      EOF
+      # daemon-reload alone does NOT re-arm the watchdog; PID1 only reads
+      # RuntimeWatchdogUSec on (re-)exec. daemon-reexec applies it without a reboot
+      # (the watchdog/systemd-config test reads it back as 0 otherwise).
+      sudo systemctl daemon-reload
+      sudo systemctl daemon-reexec
+
+  # ── Snap refresh: intentionally omitted ────────────────────────────────────
+  # `snap refresh` on UC24 triggers kernel/snapd reboots that drop the connection
+  # mid-provision (this broke the previous run's final verify). The snapd-update
+  # tests are structural failures regardless (they need beta/candidate channels +
+  # manifest keys), so we skip the refresh to keep provisioning reliable.
+
+  # ── Start checkbox agent ───────────────────────────────────────────────────
+
+  - action: ssh_command
+    command: |
+      sudo snap start --enable checkbox.agent
+
+  # ── Verify setup ──────────────────────────────────────────────────────────
+
+  - action: ssh_command
+    command: |
+      echo "=== Installed snaps ==="
+      snap list checkbox checkbox24
+      echo ""
+      echo "=== Agent status ==="
+      snap services checkbox | grep agent || true
+      echo ""
+      echo "=== Network interface ==="
+      ip addr show end0 | grep "inet " || true
+      echo ""
+      echo "=== Machine manifest ==="
+      cat /var/tmp/checkbox-ng/machine-manifest.json

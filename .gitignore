@@ -1,0 +1,12 @@
+# Secrets and rendered configs — NEVER commit
+**/.local.env
+**/.run/
+
+# Bulky / raw Checkbox artifacts. The committed results are RESULT.md (human
+# summary) + the junit.xml (per-test pass/fail). The raw submission bundle, full
+# JSON, and HTML report are regenerable with `run-*.sh collect`, so they are not
+# committed to keep the repo small. Un-ignore any of these if you want them.
+**/reports/*.tar.xz
+**/reports/*.html
+**/reports/*.json
+**/reports/*.submission.log
