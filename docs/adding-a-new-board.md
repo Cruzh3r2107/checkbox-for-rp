@@ -17,7 +17,7 @@ subfolder. The layout is:
 └── <os-slug>/
     ├── <board>-<os>-env-setup.yaml    # Envicorn provisioning YAML for this board + OS
     ├── launcher-<board>-<os>          # Checkbox launcher for this board + OS
-    ├── run-<board>.sh                 # helper script (provision / test / collect)
+    ├── run.sh                         # generic helper, copied from template/run.sh
     ├── .local.env.example             # template for secrets (IP, user, password, WiFi)
     ├── README.md                      # run notes, board facts, known quirks
     └── reports/
@@ -38,7 +38,7 @@ subfolders (`core24/` and `server24.04/`).
 | OS folder | `core<UbuntuCoreVersion>` or `server<UbuntuServerVersion>` | `core24`, `server24.04` |
 | Env-setup YAML | `<board-short>-<os>-env-setup.yaml` | `rubikpi3-core24-env-setup.yaml` |
 | Launcher | `launcher-<board-short>-<os>` | `launcher-rubikpi3-core24` |
-| Helper script | `run-<board-short>.sh` | `run-rubikpi3.sh` |
+| Helper script | `run.sh` (copied unchanged from `template/`) | `run.sh` |
 | Run log / junit | `<board-short>-<os>-run-<YYYY-MM-DD>.<ext>` | `rubikpi3-core24-run-2026-07-01.log` |
 
 Keep names short but unambiguous. Hyphens between words, no underscores in
@@ -61,8 +61,10 @@ board-level quirk worth knowing before diving in.
 ### env-setup.yaml
 
 Start from [`template/core-env-setup.yaml`](../template/core-env-setup.yaml)
-or [`template/server-env-setup.yaml`](../template/server-env-setup.yaml) and
-change the `CHANGE-ME` lines for your board (watchdog module, machine manifest).
+or [`template/server-env-setup.yaml`](../template/server-env-setup.yaml) and set
+the machine manifest for your board's hardware. The `<WATCHDOG_MODULE>`,
+`<DEVICE_IP>`, `<USER>`, and `<PASSWORD>` placeholders are filled by `run.sh`
+from `.local.env`, so leave those as-is.
 
 ### launcher
 
@@ -70,17 +72,18 @@ Start from [`template/core-launcher`](../template/core-launcher) or
 [`template/server-launcher`](../template/server-launcher). Fill in `WPA_*`
 fields if the board has WiFi, set `TOTAL_RTC_NUM` to the number of RTC devices.
 
-### run-<board>.sh
+### run.sh
 
-Copy the helper script from an existing board folder and update the variable
-names at the top (`BOARD_IP`, launcher path, env-setup path) to match your
-`.local.env` and filenames.
+Copy [`template/run.sh`](../template/run.sh) into the folder unchanged. It is
+generic: it auto-discovers the `*-env-setup.yaml` and `launcher-*` in the folder
+and reads `DEVICE_*` from `.local.env`, so there is nothing to edit.
 
 ### .local.env.example
 
-Copy from [`template/.local.env.example`](../template/.local.env.example).
-The variable names stay the same. This file is committed; the real `.local.env`
-(with actual IP and passwords) is gitignored.
+Copy from [`template/.local.env.example`](../template/.local.env.example). Use the
+standardized `DEVICE_IP` / `DEVICE_USER` / `DEVICE_PASSWORD` names (plus `WIFI_*`
+and `WATCHDOG_MODULE`). This file is committed; the real `.local.env` (with actual
+IP and passwords) is gitignored.
 
 ### /report/RESULT.md
 
@@ -110,7 +113,7 @@ rubik-pi-3/
 ├── core24/
 │   ├── rubikpi3-core24-env-setup.yaml
 │   ├── launcher-rubikpi3-core24
-│   ├── run-rubikpi3.sh
+│   ├── run.sh
 │   ├── .local.env.example
 │   ├── README.md
 │   └── reports/
@@ -119,7 +122,7 @@ rubik-pi-3/
 └── server24.04/
     ├── rubikpi3-server2404-env-setup.yaml
     ├── launcher-rubikpi3-server2404
-    ├── run-rubikpi3.sh
+    ├── run.sh
     ├── .local.env.example
     ├── README.md
     └── reports/

@@ -11,7 +11,7 @@ Board-and-OS specific configuration for a Checkbox run on the Xilinx Kria KV260
 
 | File | Purpose |
 |------|---------|
-| `run-kria.sh` | Helper that runs the whole flow for this board (`ping`, `provision`, `verify`, `test`, `collect`). |
+| `run.sh` | Generic helper (the same run.sh in every folder; canonical copy in template/run.sh) that runs the whole flow (`ping`, `provision`, `verify`, `test`, `collect`). |
 | `kria-server2404-env-setup.yaml` | Envicorn provisioning: `checkbox-ce-oem` (classic) + Docker and debs, manifest, `cadence_wdt` watchdog, starts `checkbox-ce-oem.remote-slave`. |
 | `launcher-kria-kv260-server2404` | Checkbox launcher: test plan and `TOTAL_RTC_NUM`. |
 | `.local.env.example` | Copy to `.local.env` (gitignored) and fill in. |
@@ -32,16 +32,16 @@ Board-and-OS specific configuration for a Checkbox run on the Xilinx Kria KV260
 
 ## Run it
 
-Copy `.local.env.example` to `.local.env` and set `KRIA_IP`, `KRIA_USER`,
-`KRIA_PASSWORD` (no Wi-Fi on this board). Run `ssh-copy-id <KRIA_USER>@<KRIA_IP>`
+Copy `.local.env.example` to `.local.env` and set `DEVICE_IP`, `DEVICE_USER`,
+`DEVICE_PASSWORD` (no Wi-Fi on this board). Run `ssh-copy-id <DEVICE_USER>@<DEVICE_IP>`
 once and make sure the account sudo password is set. Then, from this folder:
 
 ```bash
-bash run-kria.sh ping        # board reachable
-bash run-kria.sh provision   # one-time setup
-bash run-kria.sh verify      # agent up on 18871 (before the run only)
-bash run-kria.sh test        # run the plan (30 to 60 min)
-bash run-kria.sh collect     # save reports and print pass and fail
+bash run.sh ping        # board reachable
+bash run.sh provision   # one-time setup
+bash run.sh verify      # agent up on 18871 (before the run only)
+bash run.sh test        # run the plan (30 to 60 min)
+bash run.sh collect     # save reports and print pass and fail
 ```
 
 ## Board-specific notes

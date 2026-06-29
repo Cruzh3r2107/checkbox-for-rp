@@ -10,7 +10,7 @@ the run, verification is ping + port only.
 | [`server24.04/`](server24.04/) | Ubuntu Server 24.04 | `checkbox-ce-oem.remote-slave` | `com.canonical.contrib::ce-oem-iot-server-24-04-automated` |
 
 Each folder is self-contained: `README.md`, the Envicorn `*-env-setup.yaml`, the
-launcher, the `run-pi4.sh` helper, `.local.env.example`, and `reports/`.
+launcher, the `run.sh` helper, `.local.env.example`, and `reports/`.
 
 Same board, two images - flash the one you want, give the board its router-reserved
 IP, fill in that folder's `.local.env`, and run.

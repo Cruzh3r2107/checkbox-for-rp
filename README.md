@@ -188,11 +188,11 @@ OS:
 The helper does all of the above in one place:
 
 ```bash
-bash <board>/<os>/run-*.sh ping        # board reachable?
-bash <board>/<os>/run-*.sh provision   # install + configure Checkbox (once)
-bash <board>/<os>/run-*.sh verify      # agent up on 18871 (BEFORE the run only)
-bash <board>/<os>/run-*.sh test        # run the plan (streams; 30 to 60 min)
-bash <board>/<os>/run-*.sh collect     # save reports + extract json + print pass/fail
+bash <board>/<os>/run.sh ping        # board reachable?
+bash <board>/<os>/run.sh provision   # install + configure Checkbox (once)
+bash <board>/<os>/run.sh verify      # agent up on 18871 (BEFORE the run only)
+bash <board>/<os>/run.sh test        # run the plan (streams; 30 to 60 min)
+bash <board>/<os>/run.sh collect     # save reports + extract json + print pass/fail
 ```
 ---
 

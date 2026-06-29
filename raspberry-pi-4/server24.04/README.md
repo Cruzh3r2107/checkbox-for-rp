@@ -11,7 +11,7 @@ Ubuntu Server 24.04.
 
 | File | Purpose |
 |------|---------|
-| `run-pi4.sh` | Helper that runs the whole flow for this board (`ping`, `provision`, `verify`, `test`, `collect`). |
+| `run.sh` | Generic helper (the same run.sh in every folder; canonical copy in template/run.sh) that runs the whole flow (`ping`, `provision`, `verify`, `test`, `collect`). |
 | `pi4-server2404-env-setup.yaml` | Envicorn provisioning: `checkbox-ce-oem` (classic) + Docker and debs, manifest, `bcm2835_wdt` watchdog, starts `checkbox-ce-oem.remote-slave`. |
 | `launcher-pi4-server2404` | Checkbox launcher: test plan, Wi-Fi credentials, `TOTAL_RTC_NUM`. |
 | `.local.env.example` | Copy to `.local.env` (gitignored) and fill in. |
@@ -32,16 +32,16 @@ Ubuntu Server 24.04.
 
 ## Run it
 
-Copy `.local.env.example` to `.local.env` and set `PI_IP`, `PI_USER`,
-`PI_PASSWORD`, `WIFI_SSID`, `WIFI_PSK`. Run `ssh-copy-id <PI_USER>@<PI_IP>` once and
+Copy `.local.env.example` to `.local.env` and set `DEVICE_IP`, `DEVICE_USER`,
+`DEVICE_PASSWORD`, `WIFI_SSID`, `WIFI_PSK`. Run `ssh-copy-id <DEVICE_USER>@<DEVICE_IP>` once and
 make sure the account sudo password is set. Then, from this folder:
 
 ```bash
-bash run-pi4.sh ping        # board reachable
-bash run-pi4.sh provision   # one-time setup
-bash run-pi4.sh verify      # agent up on 18871 (before the run only)
-bash run-pi4.sh test        # run the plan (30 to 60 min)
-bash run-pi4.sh collect     # save reports and print pass and fail
+bash run.sh ping        # board reachable
+bash run.sh provision   # one-time setup
+bash run.sh verify      # agent up on 18871 (before the run only)
+bash run.sh test        # run the plan (30 to 60 min)
+bash run.sh collect     # save reports and print pass and fail
 ```
 
 ## Board-specific notes
