@@ -1,0 +1,41 @@
+#!/usr/bin/env checkbox-cli
+
+[launcher]
+app_id = com.canonical.certification:rapid-prototype-oem-kria-kv260-server2404
+launcher_version = 1
+stock_reports = text, submission_files, json
+
+[test plan]
+unit = com.canonical.contrib::ce-oem-iot-server-24-04-automated
+forced = yes
+
+[test selection]
+forced = yes
+# FLAGGED BOARD LIMITATIONS (documented in README - Known board limitations):
+# cpu/scaling_test and power-management/cold-reboot wedge the Zynq UltraScale+ at
+# the kernel level (uninterruptible; only a power-cycle clears them). Excluded so
+# the automated run completes; called out explicitly as known limitations.
+exclude = .*cpu/scaling_test.* .*power-management/cold-reboot.*
+
+[ui]
+type = silent
+auto_retry = yes
+max_attempts = 3
+delay_before_retry = 15
+
+[environment]
+# WiFi - Kria KV260 has no built-in WiFi adapter.
+# Leave all SSID fields empty - WiFi tests are gated off by the manifest.
+WPA_BG_SSID=
+WPA_BG_PSK=
+WPA_N_SSID=
+WPA_N_PSK=
+WPA_AC_SSID=
+WPA_AC_PSK=
+
+OPEN_BG_SSID=
+OPEN_N_SSID=
+OPEN_AC_SSID=
+
+# RTC: Kria KV260 (Zynq UltraScale+) has RTC hardware.
+TOTAL_RTC_NUM=1

@@ -1,53 +1,53 @@
-# Raspberry Pi 4 - Ubuntu Server 24.04 Checkbox Setup
+# Raspberry Pi 4 - Ubuntu Server 24.04
 
-Rapid-prototyping certification run for the Raspberry Pi 4 on **Ubuntu Server
-24.04**. Host-driven (no SSH): Envicorn provisions, the Checkbox controller drives
-the run, verification is ping + port only.
+Board-and-OS specific configuration for a Checkbox run on the Raspberry Pi 4 running
+Ubuntu Server 24.04.
 
-> Sibling: `../core24/` is the Ubuntu Core 24 variant of the same board (different
-> snaps, agent, and test plan).
+> The full workflow, host prerequisites, and how to read results are in the
+> [main README](../../README.md). This page covers only what is specific to this
+> board and OS.
 
-## Core 24 vs Server 24.04
+## What is in this folder
 
-| | Server 24.04 (here) | Core 24 (`../core24/`) |
-|--|--|--|
-| Agent | `checkbox-ce-oem.remote-slave` | `checkbox.agent` |
-| Frontend | `checkbox-ce-oem` (classic) | `checkbox` snap, devmode |
-| Test plan | `com.canonical.contrib::ce-oem-iot-server-24-04-automated` | `com.canonical.certification::client-cert-iot-ubuntucore-24-automated` |
-| Deps | docker.io + debs (fwts, stress-ng, …) | `docker` snap |
-| sudo | needs `sudo -S -v` priming | passwordless (UC default user) |
-
-## Fill these in
-Copy `.local.env.example` to `.local.env` (gitignored) and set `PI_IP`, `PI_USER`,
-`PI_PASSWORD`, `WIFI_SSID`, `WIFI_PSK`. IP is pinned by a **router DHCP reservation**.
+| File | Purpose |
+|------|---------|
+| `run-pi4.sh` | Helper that runs the whole flow for this board (`ping`, `provision`, `verify`, `test`, `collect`). |
+| `pi4-server2404-env-setup.yaml` | Envicorn provisioning: `checkbox-ce-oem` (classic) + Docker and debs, manifest, `bcm2835_wdt` watchdog, starts `checkbox-ce-oem.remote-slave`. |
+| `launcher-pi4-server2404` | Checkbox launcher: test plan, Wi-Fi credentials, `TOTAL_RTC_NUM`. |
+| `.local.env.example` | Copy to `.local.env` (gitignored) and fill in. |
+| `reports/` | Collected submission files and `RESULT.md`. |
 
 ## Board facts
 
 | Item | Value |
 |------|-------|
 | OS | Ubuntu Server 24.04 (arm64) |
-| Ethernet | `eth0` → `PI_IP` (router reservation) |
-| WiFi | `wlan0` (brcmfmac) - creds in launcher |
-| BT | yes |
-| Agent port | 18871 (`checkbox-ce-oem.remote-slave`) |
+| Ethernet / Wi-Fi | `eth0` / `wlan0` (brcmfmac) |
+| Bluetooth | yes |
+| Agent | `checkbox-ce-oem.remote-slave`, port 18871 |
 | Watchdog | `bcm2835_wdt` |
 | RTC | none (`TOTAL_RTC_NUM=0`) |
+| Login | needs a sudo password (Ubuntu Server does not import the SSH key) |
 | Test plan | `com.canonical.contrib::ce-oem-iot-server-24-04-automated` |
 
-## Steps (from repo root, `checkbox-all/`)
+## Run it
+
+Copy `.local.env.example` to `.local.env` and set `PI_IP`, `PI_USER`,
+`PI_PASSWORD`, `WIFI_SSID`, `WIFI_PSK`. Run `ssh-copy-id <PI_USER>@<PI_IP>` once and
+make sure the account sudo password is set. Then, from this folder:
+
 ```bash
-bash raspberry-pi-4/server24.04/run-pi4.sh ping       # 1. reachable?
-bash raspberry-pi-4/server24.04/run-pi4.sh provision  # 2. Envicorn (~10-20 min)
-bash raspberry-pi-4/server24.04/run-pi4.sh verify     # 3. 18871 OPEN (BEFORE the run only)
-bash raspberry-pi-4/server24.04/run-pi4.sh test       # 4. run plan (~30-60 min)
-bash raspberry-pi-4/server24.04/run-pi4.sh collect    # 5. reports + .json + totals
+bash run-pi4.sh ping        # board reachable
+bash run-pi4.sh provision   # one-time setup
+bash run-pi4.sh verify      # agent up on 18871 (before the run only)
+bash run-pi4.sh test        # run the plan (30 to 60 min)
+bash run-pi4.sh collect     # save reports and print pass and fail
 ```
 
-## Quirks (carried over)
-- **Never TCP-probe 18871 during a run** - it kills the session. Ping only mid-run.
-- **`sudo -S` + heredoc don't mix** on a fresh flash - prime with `sudo -S -v` first.
-- **Power-cycle doesn't clear a checkbox session** - clear the DUT session before re-running.
-- **`.json` is bundled in the `.tar.xz`** as `submission.json`; `collect` extracts it.
-- Expect `networking/predictable_names` and `miscellanea/efi_boot_mode` to fail
-  (Pi uses `eth0`/`wlan0` and U-Boot) - known structural failures.
-- Historical baseline for Pi 4 Server 24.04: ~83 passed / ~6 structural failures.
+## Board-specific notes
+
+- Results land in [reports/RESULT.md](reports/RESULT.md) after `collect`.
+- Structural failures that cannot be fixed: `miscellanea/efi_boot_mode` (the Pi
+  boots U-Boot) and `networking/predictable_names` (the Pi uses `eth0` and `wlan0`).
+- On a fresh flash, provisioning primes sudo with `sudo -S -v` before any heredoc;
+  the helper handles this.

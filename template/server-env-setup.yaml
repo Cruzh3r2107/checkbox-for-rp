@@ -1,0 +1,78 @@
+## Envicorn environment setup - Ubuntu Server 24.04 (template)
+##
+## Provisions a board for Checkbox: installs the snaps and test dependencies,
+## writes the machine manifest, loads the watchdog, and starts the agent.
+## Change the lines marked CHANGE-ME for your board, then run:
+##   ceqa-env-setup-tools.test-env-setup setup -f env-setup.yaml \
+##     --remote-ip <DEVICE_IP> --username <USER> --password <PASSWORD>
+##
+## A full real-world example:
+## https://github.com/canonical/ce-oem-dut-checkbox-configuration/blob/main/project/koto/server2404_env_setup.yaml
+
+actions:
+
+  # Passwordless sudo. Cache the password first with `sudo -S -v`; do NOT pipe it
+  # into a `sudo ... << EOF` heredoc (the heredoc takes over stdin and auth fails).
+  - action: ssh_command
+    command: |
+      printf '%s\n' '<PASSWORD>' | sudo -S -v
+      echo '<USER> ALL=(ALL) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/99-nopasswd > /dev/null
+      sudo chmod 440 /etc/sudoers.d/99-nopasswd
+
+  # Checkbox snaps (Server uses the classic checkbox-ce-oem).
+  - action: install_snap
+    name: checkbox24
+    track: latest
+    risk: stable
+  - action: install_snap
+    name: checkbox
+    track: latest
+    risk: stable
+    mode: classic
+  - action: install_snap
+    name: checkbox-ce-oem
+    track: latest
+    risk: stable
+    mode: classic
+
+  # Common test dependencies. Add or remove for your board.
+  - action: install_debian
+    name: docker.io
+  - action: install_debian
+    name: fwts
+  - action: install_debian
+    name: stress-ng
+
+  # Hardware watchdog. CHANGE-ME: use your board's watchdog module.
+  - action: ssh_command
+    command: |
+      sudo modprobe <WATCHDOG_MODULE> 2>/dev/null || true
+      echo '<WATCHDOG_MODULE>' | sudo tee /etc/modules-load.d/watchdog.conf
+      sudo mkdir -p /etc/systemd/system.conf.d
+      sudo tee /etc/systemd/system.conf.d/10-watchdog.conf << 'EOF'
+      [Manager]
+      RuntimeWatchdogUSec=15s
+      EOF
+      sudo systemctl daemon-reload
+      sudo systemctl daemon-reexec
+
+  # Machine manifest. CHANGE-ME: declare what hardware the board actually has.
+  # Hardware set to false is correctly skipped (it shows as cannot_start).
+  - action: ssh_command
+    command: |
+      sudo mkdir -p /var/tmp/checkbox-ng
+      sudo tee /var/tmp/checkbox-ng/machine-manifest.json << 'MANIFEST'
+      {
+        "com.canonical.certification::has_ethernet_adapter": true,
+        "com.canonical.certification::has_hardware_watchdog": true,
+        "com.canonical.certification::has_wlan_adapter": false,
+        "com.canonical.certification::has_bt_adapter": false,
+        "com.canonical.certification::has_audio_playback": false
+      }
+      MANIFEST
+
+  # Start the CE-OEM remote agent (Server). Stop checkbox.agent first; both use 18871.
+  - action: ssh_command
+    command: |
+      sudo snap stop --disable checkbox.agent 2>/dev/null || true
+      sudo snap start --enable checkbox-ce-oem.remote-slave

@@ -1,0 +1,249 @@
+## Envicorn environment setup - Ubuntu Server 24.04
+## Test plan: ce-oem-iot-server-24-04-automated (com.canonical.contrib)
+##
+## Board: Xilinx Kria KV260 (AMD Zynq UltraScale+)
+## Ethernet interface: eth0  (no WiFi / no Bluetooth hardware)
+## Watchdog module: cadence_wdt (fallback: zynq_wdt)
+## RTC count: 1
+##
+## Run from host (placeholders are filled by run-kria.sh from .local.env):
+##   ceqa-env-setup-tools.test-env-setup setup \
+##     -f kria-server2404-env-setup.yaml \
+##     --remote-ip <KRIA_IP> --username <USER> --password <PASSWORD>
+##
+## IMPORTANT - static IP is set EQUAL to the board's current IP (<KRIA_IP>) so the
+## address never changes during provisioning. Changing the address mid-run drops
+## the SSH/agent connection and aborts the flow.
+
+actions:
+
+  # ── Passwordless sudo (required for non-interactive SSH) ───────────────────
+  # Must be the first action. Authenticate sudo from stdin and CACHE the creds
+  # with `sudo -S -v` first. Do NOT pipe the password into a `sudo ... << EOF`
+  # heredoc: the trailing heredoc takes over stdin, so sudo reads the heredoc's
+  # first line as the password and authentication fails. After caching, the
+  # following sudo calls (and all later actions, once NOPASSWD is in place) run
+  # without prompting.
+
+  - action: ssh_command
+    command: |
+      printf '%s\n' '<PASSWORD>' | sudo -S -v
+      echo '<USER> ALL=(ALL) NOPASSWD: ALL' | sudo tee /etc/sudoers.d/99-nopasswd > /dev/null
+      sudo chmod 440 /etc/sudoers.d/99-nopasswd
+
+  # ── Checkbox snaps ─────────────────────────────────────────────────────────
+
+  - action: install_snap
+    name: checkbox24
+    track: latest
+    risk: stable
+
+  - action: install_snap
+    name: checkbox
+    track: latest
+    risk: stable
+    mode: classic
+
+  - action: install_snap
+    name: checkbox-ce-oem
+    track: latest
+    risk: stable
+    mode: classic
+
+  # ── Debian packages ─────────────────────────────────────────────────────────
+
+  - action: install_debian
+    name: bluez
+
+  - action: install_debian
+    name: bluez-tools
+
+  - action: install_debian
+    name: fwts
+
+  - action: install_debian
+    name: stress-ng
+
+  - action: install_debian
+    name: wpasupplicant
+
+  - action: install_debian
+    name: wireless-tools
+
+  - action: install_debian
+    name: docker.io
+
+  - action: install_debian
+    name: watchdog
+
+  - action: install_debian
+    name: usbutils
+
+  - action: install_debian
+    name: dmidecode
+
+  - action: install_debian
+    name: pciutils
+
+  - action: install_debian
+    name: iperf3
+
+  - action: install_debian
+    name: ethtool
+
+  - action: install_debian
+    name: alsa-utils
+
+  - action: install_debian
+    name: i2c-tools
+
+  # Docker Compose v2 plugin
+
+  - action: ssh_command
+    command: |
+      sudo apt install -y ca-certificates curl
+      sudo install -m 0755 -d /etc/apt/keyrings
+      sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg \
+        -o /etc/apt/keyrings/docker.asc
+      sudo chmod a+r /etc/apt/keyrings/docker.asc
+      echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] \
+        https://download.docker.com/linux/ubuntu \
+        $(. /etc/os-release && echo "$VERSION_CODENAME") stable" \
+        | sudo tee /etc/apt/sources.list.d/docker.list
+      sudo apt update
+      sudo apt install -y docker-compose-plugin
+
+  # ── Networking ─────────────────────────────────────────────────────────────
+  # No board-side static IP. The address is pinned by a DHCP reservation on the
+  # ASUS router (Kria MAC -> <KRIA_IP>), which survives the mid-test reboot.
+  # We deliberately leave the board's DHCP/cloud-init networking untouched -
+  # reconfiguring it here is what drops the connection mid-provision.
+
+  # ── Hardware watchdog ──────────────────────────────────────────────────────
+  # Kria KV260 (Zynq UltraScale+): try cadence_wdt first, fall back to zynq_wdt.
+
+  - action: ssh_command
+    command: |
+      sudo modprobe cadence_wdt 2>/dev/null || sudo modprobe zynq_wdt 2>/dev/null || true
+      if lsmod | grep -q cadence_wdt; then
+        echo 'cadence_wdt' | sudo tee /etc/modules-load.d/watchdog.conf
+      elif lsmod | grep -q zynq_wdt; then
+        echo 'zynq_wdt' | sudo tee /etc/modules-load.d/watchdog.conf
+      else
+        echo 'WARNING: no watchdog module loaded'
+      fi
+      sudo mkdir -p /etc/systemd/system.conf.d
+      sudo tee /etc/systemd/system.conf.d/10-watchdog.conf << 'EOF'
+      [Manager]
+      RuntimeWatchdogUSec=15s
+      EOF
+      sudo systemctl daemon-reload
+
+  # ── Machine manifest ───────────────────────────────────────────────────────
+  # Kria KV260: no WiFi, no BT, no audio, no CAN, no I2C loopback, no USB storage.
+
+  - action: ssh_command
+    command: |
+      sudo mkdir -p /var/tmp/checkbox-ng
+      sudo tee /var/tmp/checkbox-ng/machine-manifest.json << 'MANIFEST'
+      {
+        "com.canonical.certification::_ignore_disconnected_ethernet_interfaces": false,
+        "com.canonical.certification::gpio_loopback": false,
+        "com.canonical.certification::has_audio_capture": false,
+        "com.canonical.certification::has_audio_loopback_connector": false,
+        "com.canonical.certification::has_audio_playback": false,
+        "com.canonical.certification::has_bt_adapter": false,
+        "com.canonical.certification::has_bt_obex_support": false,
+        "com.canonical.certification::has_bt_smart": false,
+        "com.canonical.certification::has_card_reader": false,
+        "com.canonical.certification::has_dp": false,
+        "com.canonical.certification::has_dvi": false,
+        "com.canonical.certification::has_eclite": false,
+        "com.canonical.certification::has_edac_module": false,
+        "com.canonical.certification::has_eeprom": false,
+        "com.canonical.certification::has_ethernet_adapter": true,
+        "com.canonical.certification::has_ethernet_wake_on_lan_support": false,
+        "com.canonical.certification::has_fde": false,
+        "com.canonical.certification::has_hardware_watchdog": true,
+        "com.canonical.certification::has_hdmi": false,
+        "com.canonical.certification::has_i2c": false,
+        "com.canonical.certification::has_ishtp": false,
+        "com.canonical.certification::has_led_fn_lock": false,
+        "com.canonical.certification::has_led_gpio_sysfs": false,
+        "com.canonical.certification::has_led_power": false,
+        "com.canonical.certification::has_led_serial": false,
+        "com.canonical.certification::has_led_wireless": false,
+        "com.canonical.certification::has_md_raid": false,
+        "com.canonical.certification::has_mei": false,
+        "com.canonical.certification::has_qep": false,
+        "com.canonical.certification::has_secure_boot": false,
+        "com.canonical.certification::has_sim_card": false,
+        "com.canonical.certification::has_socket_can_fd": false,
+        "com.canonical.certification::has_thunderbolt": false,
+        "com.canonical.certification::has_thunderbolt3": false,
+        "com.canonical.certification::has_tpm2_chip": false,
+        "com.canonical.certification::has_usb_dwc3_controller": false,
+        "com.canonical.certification::has_usb_storage": false,
+        "com.canonical.certification::has_usbc_data": false,
+        "com.canonical.certification::has_usbc_otg": false,
+        "com.canonical.certification::has_vga": false,
+        "com.canonical.certification::has_wlan_adapter": false,
+        "com.canonical.certification::has_wwan_module": false,
+        "com.canonical.certification::socket_can_echo_server_running": false
+      }
+      MANIFEST
+
+  # ── Checkbox environment config ────────────────────────────────────────────
+  # Kria KV260 has no WiFi - all SSID/PSK fields are blank.
+  # TOTAL_RTC_NUM=1 because the board has RTC hardware.
+
+  - action: ssh_command
+    command: |
+      sudo mkdir -p /etc/checkbox.d
+      sudo tee /etc/checkbox.d/checkbox.conf << 'CONF'
+      [environment]
+      WPA_BG_SSID=
+      WPA_BG_PSK=
+      WPA_N_SSID=
+      WPA_N_PSK=
+      WPA_AC_SSID=
+      WPA_AC_PSK=
+      OPEN_BG_SSID=
+      OPEN_N_SSID=
+      OPEN_AC_SSID=
+      TOTAL_RTC_NUM=1
+      CONF
+
+  # ── Docker post-install ────────────────────────────────────────────────────
+
+  - action: ssh_command
+    command: |
+      sudo systemctl enable --now docker
+      sudo usermod -aG docker $USER
+      sudo ln -sf /usr/libexec/docker/cli-plugins/docker-compose \
+        /usr/local/bin/docker-compose
+
+  # ── Start the CE-OEM remote agent ──────────────────────────────────────────
+  # The test plan is com.canonical.contrib:: which only exists in checkbox-ce-oem,
+  # so the DUT must run checkbox-ce-oem.remote-slave, NOT checkbox.agent.
+  # Both listen on 18871, so stop checkbox.agent first to avoid the port conflict.
+
+  - action: ssh_command
+    command: |
+      sudo snap stop --disable checkbox.agent 2>/dev/null || true
+      sudo snap start --enable checkbox-ce-oem.remote-slave
+
+  # ── Verify ────────────────────────────────────────────────────────────────
+
+  - action: ssh_command
+    command: |
+      echo "=== Snaps ==="
+      snap list checkbox24 checkbox checkbox-ce-oem
+      echo "=== Agent (remote-slave should be active) ==="
+      snap services checkbox-ce-oem | grep remote-slave || true
+      echo "=== Watchdog ==="
+      lsmod | grep wdt || echo "WARNING: no wdt module"
+      echo "=== Interface ==="
+      ip addr show eth0 | grep "inet " || true
+      echo "=== Manifest ==="
+      cat /var/tmp/checkbox-ng/machine-manifest.json

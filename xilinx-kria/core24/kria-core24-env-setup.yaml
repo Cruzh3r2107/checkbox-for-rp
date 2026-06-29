@@ -1,0 +1,109 @@
+## Envicorn environment setup - Ubuntu Core 24
+## Test plan target: client-cert-iot-ubuntucore-24-automated (com.canonical.certification)
+##
+## Board: Xilinx Kria KV260 (AMD Zynq UltraScale+) on Ubuntu Core 24
+## Ethernet: eth0/end0 (router DHCP reservation; no board-side static IP)
+## Watchdog: cadence_wdt (fallback zynq_wdt) | RTC: 1 | WiFi/BT: none
+##
+## Run from host (placeholders filled by run-kria.sh from .local.env):
+##   ceqa-env-setup-tools.test-env-setup setup \
+##     -f kria-core24-env-setup.yaml \
+##     --remote-ip <KRIA_IP> --username <USER> --password <PASSWORD>
+##
+## UC24 notes (same model as the Pi 4 UC24 setup):
+##  - checkbox frontend snap is devmode on uc24/stable; checkbox24 is auto-pulled.
+##  - Agent service is checkbox.agent (NOT checkbox-ce-oem.remote-slave; classic
+##    snaps cannot be installed on Ubuntu Core).
+##  - The default UC24 user has passwordless sudo, so no `sudo -S` priming needed.
+
+actions:
+
+  # ── Checkbox frontend snap (devmode is standard for checkbox on UC) ─────────
+  - action: install_snap
+    name: checkbox
+    track: uc24
+    risk: stable
+    mode: devmode
+
+  # ── Docker (unlocks the docker certification jobs; same win as the Pi) ──────
+  - action: install_snap
+    name: docker
+    track: latest
+    risk: stable
+
+  - action: ssh_command
+    command: |
+      sudo snap connect docker:home 2>/dev/null || true
+      sudo snap start docker 2>/dev/null || true
+
+  # ── Networking ─────────────────────────────────────────────────────────────
+  # No board-side static IP. The address is pinned by a DHCP reservation on the
+  # router (Kria MAC -> <KRIA_IP>). We deliberately leave networking untouched.
+
+  # ── Machine manifest ───────────────────────────────────────────────────────
+  # Kria KV260: no WiFi, no BT, no audio, headless. Ethernet + watchdog + RTC.
+  - action: ssh_command
+    command: |
+      sudo mkdir -p /var/tmp/checkbox-ng
+      sudo tee /var/tmp/checkbox-ng/machine-manifest.json << 'MANIFEST'
+      {
+        "com.canonical.certification::gpio_loopback": false,
+        "com.canonical.certification::need_gadget_snap_update_test": true,
+        "com.canonical.certification::need_kernel_snap_update_test": true,
+        "com.canonical.certification::need_snapd_snap_update_test": true,
+        "com.canonical.certification::has_audio_capture": false,
+        "com.canonical.certification::has_audio_playback": false,
+        "com.canonical.certification::has_bt_adapter": false,
+        "com.canonical.certification::has_bt_smart": false,
+        "com.canonical.certification::has_ethernet_adapter": true,
+        "com.canonical.certification::has_hardware_watchdog": true,
+        "com.canonical.certification::has_hdmi": false,
+        "com.canonical.certification::has_i2c": false,
+        "com.canonical.certification::has_secure_boot": false,
+        "com.canonical.certification::has_tpm2_chip": false,
+        "com.canonical.certification::has_usb_storage": false,
+        "com.canonical.certification::has_wlan_adapter": false,
+        "com.canonical.certification::socket_can_echo_server_running": false
+      }
+      MANIFEST
+
+  # ── Hardware watchdog ──────────────────────────────────────────────────────
+  # cadence_wdt first, fall back to zynq_wdt. NOTE: on Ubuntu Core the
+  # RuntimeWatchdogUSec drop-in is often NOT honored (watchdog/systemd-config may
+  # still fail) - kept best-effort.
+  - action: ssh_command
+    command: |
+      sudo modprobe cadence_wdt 2>/dev/null || sudo modprobe zynq_wdt 2>/dev/null || true
+      if lsmod | grep -q cadence_wdt; then
+        echo 'cadence_wdt' | sudo tee /etc/modules-load.d/watchdog.conf
+      elif lsmod | grep -q zynq_wdt; then
+        echo 'zynq_wdt' | sudo tee /etc/modules-load.d/watchdog.conf
+      fi
+      sudo mkdir -p /etc/systemd/system.conf.d
+      sudo tee /etc/systemd/system.conf.d/10-watchdog.conf << 'EOF'
+      [Manager]
+      RuntimeWatchdogUSec=15s
+      EOF
+      sudo systemctl daemon-reload
+      sudo systemctl daemon-reexec
+
+  # ── Snap refresh: intentionally omitted ────────────────────────────────────
+  # `snap refresh` on UC24 triggers kernel/snapd reboots that drop the connection
+  # mid-provision. The snapd-update tests are structural failures regardless.
+
+  # ── Start checkbox agent ───────────────────────────────────────────────────
+  - action: ssh_command
+    command: |
+      sudo snap start --enable checkbox.agent
+
+  # ── Verify ─────────────────────────────────────────────────────────────────
+  - action: ssh_command
+    command: |
+      echo "=== Snaps ==="
+      snap list checkbox checkbox24 docker
+      echo "=== Agent ==="
+      snap services checkbox | grep agent || true
+      echo "=== Watchdog ==="
+      lsmod | grep wdt || echo "WARNING: no wdt module"
+      echo "=== Manifest ==="
+      cat /var/tmp/checkbox-ng/machine-manifest.json

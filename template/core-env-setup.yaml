@@ -1,0 +1,59 @@
+## Envicorn environment setup - Ubuntu Core 24 (template)
+##
+## Provisions a board for Checkbox: installs the snaps, writes the machine manifest,
+## loads the watchdog, and starts the agent. Change the lines marked CHANGE-ME for
+## your board, then run:
+##   ceqa-env-setup-tools.test-env-setup setup -f core-env-setup.yaml \
+##     --remote-ip <DEVICE_IP> --username <USER>
+##
+## Core notes: the default user has passwordless sudo and your SSH key is imported at
+## console-conf, so there is no sudo-password step and you do not pass --password.
+
+actions:
+
+  # Checkbox frontend. devmode is the standard way to run Checkbox on Ubuntu Core
+  # (not a workaround). The checkbox24 runtime is pulled in with it.
+  - action: install_snap
+    name: checkbox
+    track: uc24
+    risk: stable
+    mode: devmode
+
+  # Docker (unlocks the docker test jobs).
+  - action: install_snap
+    name: docker
+    track: latest
+    risk: stable
+  - action: ssh_command
+    command: |
+      sudo snap connect docker:home 2>/dev/null || true
+      sudo snap start docker 2>/dev/null || true
+
+  # Hardware watchdog. CHANGE-ME: use your board's watchdog module.
+  - action: ssh_command
+    command: |
+      sudo modprobe <WATCHDOG_MODULE> 2>/dev/null || true
+      echo '<WATCHDOG_MODULE>' | sudo tee /etc/modules-load.d/watchdog.conf
+
+  # Machine manifest. CHANGE-ME: declare what hardware the board actually has.
+  # Hardware set to false is correctly skipped (it shows as cannot_start).
+  - action: ssh_command
+    command: |
+      sudo mkdir -p /var/tmp/checkbox-ng
+      sudo tee /var/tmp/checkbox-ng/machine-manifest.json << 'MANIFEST'
+      {
+        "com.canonical.certification::has_ethernet_adapter": true,
+        "com.canonical.certification::has_hardware_watchdog": true,
+        "com.canonical.certification::has_wlan_adapter": false,
+        "com.canonical.certification::has_bt_adapter": false
+      }
+      MANIFEST
+
+  # Note: `snap refresh` is intentionally NOT run. On Ubuntu Core it triggers
+  # kernel/snapd reboots that break provisioning, and the snapd-update tests are
+  # structural failures regardless.
+
+  # Start the Checkbox agent.
+  - action: ssh_command
+    command: |
+      sudo snap start --enable checkbox.agent

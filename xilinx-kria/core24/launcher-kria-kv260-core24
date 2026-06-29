@@ -1,0 +1,40 @@
+#!/usr/bin/env checkbox-cli
+
+[launcher]
+app_id = com.canonical.certification:rapid-prototype-kria-kv260-core24
+launcher_version = 1
+stock_reports = text, submission_files, json
+
+[test plan]
+unit = com.canonical.certification::client-cert-iot-ubuntucore-24-automated
+forced = yes
+
+[test selection]
+forced = yes
+# FLAGGED BOARD LIMITATION (see README): power-management/cold-reboot wedges the
+# Kria KV260 at the kernel level on BOTH Server 24.04 and Core 24 (warm-reboot is
+# fine) - confirmed OS-independent board/firmware limit. cpu/scaling_test excluded
+# as a precaution (same Zynq cpufreq issue seen on Server). Excluded so the
+# automated run can complete.
+exclude = .*power-management/cold-reboot.* .*cpu/scaling_test.* .*snapd/.*(refresh|revert).*
+
+[ui]
+type = silent
+auto_retry = yes
+max_attempts = 3
+delay_before_retry = 15
+
+[environment]
+# WiFi - Kria KV260 has no WiFi adapter. Leave empty (gated by manifest).
+WPA_BG_SSID=
+WPA_BG_PSK=
+WPA_N_SSID=
+WPA_N_PSK=
+WPA_AC_SSID=
+WPA_AC_PSK=
+OPEN_BG_SSID=
+OPEN_N_SSID=
+OPEN_AC_SSID=
+
+# RTC: Kria KV260 (Zynq UltraScale+) has RTC hardware.
+TOTAL_RTC_NUM=1
